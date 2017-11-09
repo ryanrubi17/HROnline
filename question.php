@@ -1,6 +1,6 @@
 <?php
 
-	session_start();
+	
 
 	
 
@@ -20,7 +20,7 @@
 
 		position: absolute;
 
-		top: 350px;
+		top: 550px;
 
 		left: 8%;
 
@@ -35,6 +35,7 @@
 
 
 	}
+		
 
 
 
@@ -82,8 +83,6 @@
 
 	<script type="text/javascript" src="js/jquery.inputmask.js"></script>
 
-
-
 <div class="card container" id="questcon">
 			
 					
@@ -98,10 +97,10 @@
 					<form action="" method="post">
 					<div class="form-group">
 					<?php
-						$ref_number = $_GET['ref'];
-						$employeeType = $_GET['type'];
+						/*$id = $_GET['id'
+						$employeeType = $_GET['type'];*/
 
-						$cnt_res = $conn->query("SELECT * from tbl_application where REFERENCE_NO = '$ref_number'");
+						$cnt_res = $conn->query("SELECT * from tbl_application where REFERENCE_NO = '18038'");
 
 							
 
@@ -109,14 +108,13 @@
 
 								$myID = $row10['ID']; 
 
-
 							}	
 
 
 					?>
-						<label class="control-label">Applicant ID</label>
+				<label class="control-label">Applicant ID</label>
 						<input type="text" name="ref_number" id = "id" value = "26515"class="form-control" required readonly>
-						<br>
+						
 						<input type="text" name="type" id = "type" value = "Agent" class="form-control" required readonly>
 					</div>
 					
@@ -235,35 +233,202 @@
                             </div>
 
                           </div>
-                      </div>
-
                     </div>
+                </div>
                     <div class="form-group label-floating">
 
 								
 								<b>
 								<input type="text" name="mother_lname" id="mlname" class="form-control" value = "2.	What is the key to success for a call center agent?" readonly></b>
 								 <textarea class="form-control" rows="5" name="questions" id="questions" ></textarea>
+								</div>
 
+
+					<div class="form-group label-floating">
+						       <b>
+						       <input type="text" name="mother_lname" id="mlname" class="form-control" value = "3.  Do you like multitasking, or you prefer  to tackle one problem at a time?" readonly></b>
+						        <textarea class="form-control" rows="5" name="questions" id="questions" ></textarea>
+
+
+					<div class="form-group label-floating">
+								<b>
+								<input type="text" name="mother_lname" id="mlname" class="form-control" value = "4.  What will you do in a situation when your system shut down and your are still on the phone with a costumer?" readonly></b>							
+								<textarea class="form-control" rows="5" name="questions" id="questions" ></textarea>
+					
 							</div>
 
-                            </div>
-					
-					</div> 
-					
-					<div class="modal-footer">
 
-					<div class="form-group">
-						<input type="button" value = "Submit" name="interviewquestionbtn1" id ="interviewquestionbtn1" class="btn btn-primary" onclick="document.getElementById('container6')">
-						<p> <span style="color:green"><?php ;?></span> </p>
-					</div>
-					</div>
-					</form>
+                 <style>
+                 .text {
+	             width: 1080px;
+	             background-color: #ddd;
+	             /*shorthand for margin: 0 auto 0 auto; which  is shorthand for specifying each caption-side individually */
+	             margin: 0 auto;
+	             text-align: center;
+	             
 
-				</div>
+                 }
+                
+                    </style>		
+                    <!-- start of question in initial interview Notes-->
+                    	<div class="form-group label-floating">
+                    	<br>
+                   <div class="text"><b>Initial Interviewer Notes:</b></div>
+                   <br>
+			  <textarea class="form-control" rows="5" name="questions" id="questions"></textarea>
+           </div>
+       </div>
+
+       			  <form>
+      			    <div id="main">
+      				  <div class="form-group label-floating">
+      		            <div class="row col-md-12">	
+                          <label>Typing Skills: <input type="text" name="Typing Skills" id="Typing Skills"></label>
+      			            </div>
+      					     </div>
+    				           </div>
+      			              <div class="col-md-6">
+      					     <label>Accuracy: <input type="text" name="Accuracy" id="Accuracy"></label>  	
+      				        </div>		
+      					   <div class="col-md-6">
+      					  &nbsp<label>Communication: <input type="text" name="Communication" id="Communication"></label>  
+      				         </div>
+      			     		   <div class="form-group label-floating">						
+      					       	 <div class="col-md-6">
+      						       <label>Expected Salary: <input type="text" name="Expected Salary" id="Expected Salary"></label>
+      						        </div>
+      						         </div>
+      						          <div class="col-md-6">
+  					      	           <label>Work Availability:  <input  type="text" name="Work Availability" id="Work Availability"></label>
+      				             	</div>
+      				               <br>
+      			
+
+      				<div class="form-group label-floating">
+
+      					 <label class="control-label" for="Expectation">Expectation: </label>
+
+                              <textarea class="form-control" type="text" name="Expectation" id="Expectation"></textarea>
+
+							  <div class="help-block with-errors"  style="color: red"></div>
+      				
+      		     				 </div>
+
+      		              </form>
+
+      			</div>
+     		</div>  <!--end of questions in initial interview Notes-->
+
+
+
+     			<hr style="height: 10px; width: 100%; margin:0 auto;line-height:10px;background-color: #D3D3D3"; border:0 none; />
+
+
+     			<fieldset> <!-- start add label and checkbox -->
+
+     				<div class="wrapper">
+     				<div id="main">
+     				<div class="form-group label-floating">
+     				<div class="row col-md-6">
+     				<div class="col-md-8">
+     				<div class="checkbox">
+     					<label class="control-label" for="Employment Issues">Employment Issues:</label>
+     					<label for="c1">YES  <input type="checkbox" id="c1"></label>
+     					<label for="c1">NO  <input type="checkbox" id="c1"></label>
+     				</div>
+     			</div>
+     		</div>
+     	</div>
+     </div>
+  </div>
+     				<div class="col-md-6">
+     				<div class="checkbox">
+     					<label class="control-label" for="Martial Issues">Martial Issues:</label>
+     					<label for="c2">YES  <input type="checkbox" id="c2"></label>
+     					<label for="c2">NO  <input type="checkbox" id="c2"></label>
+    				</div>
+    			</div>
+    				<div class="form-group label-floating">
+    				<div class="row col-md-6">
+    					<div class="col-md-8">
+    					<div class="checkbox">
+    						<label class="control-label" for="Medical Issues">Medical Issues: </label>
+    						<label for="c3"> YES <input type="checkbox" id="c3"></label>
+    						<label for="c3"> NO  <input type="checkbox" id="c3"></label>
+    					</div>
+    				</div>
+    			</div>
+    	
+    				<div class="col-md-6">
+    					<div class="checkbox">
+    						<label class="control-label" for="Custody Issues">Custody Issues: </label>
+    						<label for="c4"> YES  <input type="checkbox" id="c4"></label>
+    						<label for="c4"> NO  <input type="checkbox" id="c4"></label>
+    					</div>
+    				</div>
+    						<div class="form-group label-floating">
+    						<div class="row col-md-6">
+    						<div class="col-md-8">
+    							<div class="checkbox">
+    								<label class="control-label" for="Plan to back to school">Plan to back to school: </label>
+    								<label for="c5"> YES  <input type="checkbox" id="c5"></label>
+    								<label for="c5"> NO   <input type="checkbox" id="c5"></label>
+    							</div>
+    						</div>
+    						</div>
+    						<div class="col-md-6">
+    							<div class="checkbox">
+    								<label class="control-label" for="Plan to go abroad">Plan to go abroad: </label>
+    								<label for="c6"> YES   <input type="checkbox" id="c6"></label>
+    								<label for="c6"> NO   <input type="checkbox" id="c6"></label>
+    							</div>
+    						</div>
+    				
+
+
+     			</fieldset> <!--end of input label and checkbox -->
+
+
+		  	<hr style="padding-bottom: 30px;">
+			
+			<style>
+			
+			.commentBox {
+				width: 400px;
+				height: 1000px;
+				color: solid black;
+				margin: 1.5 auto;
+				}
+		input[type="text"]{
+			margin: 3px auto;
+				}
+				input[type=checkbox] 
+				{
+      /* All browsers except webkit*/
+      transform: scale(1.5);
+
+      /* Webkit browsers*/
+      -webkit-transform: scale(1.5);
+      
+
+    }
+
+    .paddingClass{
+
+        margin:10px;
+        padding:5px;
+    }
+    [type="checkbox"]
+    {
+    	vertical-align: middle;
+    }
+		
+		
+	</style>
+		
 
 </div>
-<script type="text/javascript">
+<script type="text/javascript"> 
 	 $(document).ready(function() { 
 
                 var max_fields = 5; 
@@ -418,7 +583,7 @@
 									$result = $conn->query($sqlInsert);
 										$sqlInsert1 = "INSERT INTO `tbl_experience`  (APPLICANT_ID,company_name, account, role,date,line_of_business,reason_for_leaving) VALUES ('$id','$company_name1','$account1','$role1','$date1','$lineofbusiness1','$reason1')";
 
-	
+	 								
 									$result1 = $conn->query($sqlInsert1);
 									if ($result && $result1){
 										$errormsg ="Answers Submitted Successfully!";
@@ -457,6 +622,21 @@
             });
 
 </script>
-			
+
+
+	  <br>
+            <br>
+      
+        	<div class="form-group">
+        		<div align="right">
+			<input type="button" value = "Submit" name="interviewquestionbtn1" id ="interviewquestionbtn1" class="btn btn-primary" onclick="document.getElementById('container6')">
+			  <p> <span style="color:green"><?php ;?></span> </p>
+		</div>
+		  </div>
+		
+
+
 
 		
+
+

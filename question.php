@@ -113,7 +113,15 @@
 
 					?>
 				<label class="control-label">Applicant ID</label>
-						<input type="text" name="ref_number" id = "id" value = "26515"class="form-control" required readonly>
+					<?php
+						// Get current applicant id
+						$getLastRefId = $conn->query("SELECT ID from tbl_application ORDER BY ID DESC LIMIT 1");
+						while($lastRefId = $getLastRefId->fetch_assoc()) {
+							$lastId = $lastRefId['ID'];
+							$currentId = $lastId+1;
+						}
+					?>
+						<input type="text" name="ref_number" id = "id" value="<?php echo $currentId; ?>" class="form-control" required readonly>
 						
 						<input type="text" name="type" id = "type" value = "Agent" class="form-control" required readonly>
 					</div>

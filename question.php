@@ -28,7 +28,7 @@ include 'connect.php';//database connection
   <script type="text/javascript" src="js/jquery.inputmask.js"></script>
 
   <!-- css link for style.css -->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="custom_css/question_customcss.css">
 
 </head>
 

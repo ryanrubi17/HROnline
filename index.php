@@ -89,7 +89,7 @@
 	<script type="text/javascript" src="js/jquery.inputmask.js"></script>
 
 	<!-- link for style.css -->
-	<link rel="stylesheet" type="text/css" href="custom_css/index_customcss.css">
+	<link rel="stylesheet" type="text/css" href="custom_css/index.css">
 	
 
 	

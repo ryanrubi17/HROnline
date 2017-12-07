@@ -10,100 +10,15 @@
 	<link rel="stylesheet" type="text/css" href="css/datepicker3.css">
 	<link rel="stylesheet" type="text/css" href="css/ripples.css">
 	<link rel="stylesheet" type="text/css" href="css/inputmask.css">
-
+	
 	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css"> -->
 	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-	
-<style type="text/css">@import "compass/css3";
 
-	label {
-		color: #0C63E7 !important
-	}
-	p {
-	  color: #999;
-	}
-	.msg-block {
-	  margin-right: 145px;
-	}
+	<!-- link to custom css -->
+	<link rel="stylesheet" type="text/css" href="custom_css/form.css">
+	<!-- link for google material-icon -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	form.ng-minlength {
-	    background-color:red;
-	}
-
-	code {
-	  color: blue;
-	}
-	/* The switch - the box around the slider */
-	.switch {
-	  position: relative;
-	  display: inline-block;
-	  width: 40px;
-	  height: 25px;
-	}
-
-	/* Hide default HTML checkbox */
-	.switch input {display:none;}
-
-	/* The slider */
-	.slider {
-	  position: absolute;
-	  cursor: pointer;
-	  top: 0;
-	  left: 0;
-	  right: 0;
-	  bottom: 0;
-	  background-color: #ccc;
-	  -webkit-transition: .4s;
-	  transition: .4s;
-	}
-
-	.slider:before {
-	  position: absolute;
-	  content: "";
-	  height: 19px;
-	  width: 19px;
-	  left: 3px;
-	  bottom: 3px;
-	  background-color: white;
-	  -webkit-transition: .4s;
-	  transition: .4s;
-	}
-
-	input:checked + .slider {
-	  background-color: #2196F3;
-	}
-
-	input:focus + .slider {
-	  box-shadow: 0 0 1px #2196F3;
-	}
-
-	input:checked + .slider:before {
-	  -webkit-transform: translateX(16px);
-	  -ms-transform: translateX(16px);
-	  transform: translateX(16px);
-	}
-
-	input:text {
-		color: black;
-	}
-
-	img{
-		position: absolute;
-		left: 0px;
-		right: 0px;
-		z-index: 0;
-		background-position: center;
-	}
-
-	/* Rounded sliders */
-	.slider.round {
-	  border-radius: 34px;
-	}
-
-	.slider.round:before {
-	  border-radius: 50%;
-	}
-</style>
 
 </head>
 <body>
@@ -122,6 +37,9 @@
 							<div class="form-group">
 								<label for="position">Position applying for:</label>
 		      					<select id="position" name="position_name" class="select form-control" required="true">
+		      						<span><i class="fa fa-angle-down"></i></span>
+
+		      				
 		      						<?php  
 		      							include('connect.php');
 		      							$sql = "SELECT * FROM tbl_position WHERE status = 1 ORDER BY position_name ASC";
@@ -130,6 +48,7 @@
 		      							echo "<option value='".$row['position_desc']."'>".$row['position_name']."</option>";
 		      							}
 		      						?>
+
 		      					</select>
 	      					</div>
 	      					<div class="form-group">

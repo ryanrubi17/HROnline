@@ -29,9 +29,17 @@ if (isset($_POST['submit'])) {
 	$martial_issue = $_POST['martial_issue'];
 	$custody_issue = $_POST['custody_issue'];
 	$plan_school = $_POST['plan_school'];
+	
+//descriptions
+	$emp_issue_text = $_POST['emp_issue_text'];
+	$med_issue_text = $_POST['med_issue_text'];
+	$plan_abroad_text = $_POST['plan_abroad_text'];
+	$martial_issue_text = $_POST['martial_issue_text'];
+	$custody_issue_text = $_POST['custody_issue_text'];
+	$plan_school_text = $_POST['plan_school_text'];
 
 // insert statement
-$sql_insert = "INSERT INTO tbl_recruitsquestions(ID, question1_ans, question2_ans, question3_ans, question4_ans,note, typing_skill, communication_skill, work_avail, accuracy, expected_salary, expectation, emp_issue, med_issue, plan_abroad, martial_issue, custody_issue, plan_sch)VALUES('".$client_id."','".$answer1."','".$answer2."','".$answer3."','".$answer4."','".$IIN."','".$typing."','".$communication."','".$work_avail."','".$accuracy."', '".$exp_sal."', '".$expectations."','".$emp_issue."','".$med_issue."', '".$plan_abroad."', '".$martial_issue."', '".$custody_issue."', '".$plan_school."')";
+$sql_insert = "INSERT INTO tbl_recruitsquestions(ID, question1_ans, question2_ans, question3_ans, question4_ans,note, typing_skill, communication_skill, work_avail, accuracy, expected_salary, expectation, emp_issue, med_issue, plan_abroad, martial_issue, custody_issue, plan_sch, emp_issue_text, martial_issue_text, med_issue_text, custody_issue_text, plan_abroad_text, plan_school_text)VALUES('".$client_id."','".$answer1."','".$answer2."','".$answer3."','".$answer4."','".$IIN."','".$typing."','".$communication."','".$work_avail."','".$accuracy."', '".$exp_sal."', '".$expectations."','".$emp_issue."','".$med_issue."', '".$plan_abroad."', '".$martial_issue."', '".$custody_issue."', '".$plan_school."', '".$emp_issue_text."', '".$med_issue_text."', '".$plan_abroad_text."', '".$martial_issue_text."', '".$custody_issue_text."', '".$plan_school_text."')";
 $result = $conn->query($sql_insert);
 
 if ($result) {

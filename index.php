@@ -733,7 +733,7 @@ $(document).ready(function(){
 
 						      							while($row = $result->fetch_assoc()){
 
-						      								if ($row['id'] == 68) {
+						      								if ($row['id'] == 137) {
 
 						      									echo "<option value='".$row['Citizenship']."' selected>".$row['Citizenship']."</option>";
 
@@ -967,7 +967,7 @@ $(document).ready(function(){
 
 										<label for="feet" class="control-label">Feet (ft.)</label>
 
-										<input type="number" name="feet" class="form-control" id="feet">
+										<input type="number" name="feet" class="form-control" id="feet" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
 
 									</div>
 
@@ -979,7 +979,7 @@ $(document).ready(function(){
 
 										<label for="inches" class="control-label">Inches (in.)</label>
 
-										<input type="number" name="inch" class="form-control" id="inches">
+										<input type="number" name="inch" class="form-control" id="inches" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
 
 									</div>
 
@@ -1301,7 +1301,7 @@ $(document).ready(function(){
 
 								
 
-										<input class="form-control" type="number" name="contact_details" id="contactpersonno" required>
+										<input class="form-control" type="number" name="contact_details" id="contactpersonno" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57" required>
 
 										<div class="help-block with-errors" style="color: red"></div>
 
@@ -1703,7 +1703,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="sage">Age</label>
 
-                                <input id="sage" class="form-control" type="number" name="sibling_age1"/>
+                                <input id="sage" class="form-control" type="number" name="sibling_age1" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
 
                               </div>
 
@@ -1735,7 +1735,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="sage">Age</label>
 
-                                <input id="sage" class="form-control" type="number" name="sibling_age2"/>
+                                <input id="sage" class="form-control" type="number" name="sibling_age2" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
 
                               </div>
 
@@ -1769,7 +1769,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="sage">Age</label>
 
-                                <input id="sage" class="form-control" type="number" name="sibling_age3"/>
+                                <input id="sage" class="form-control" type="number" name="sibling_age3" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
 
                               </div>
 
@@ -1841,7 +1841,7 @@ $(document).ready(function(){
 
 	                                <label class="control-label" for="age">Age</label>
 
-	                                <input id="age" class="form-control" type="number" name="child_age1"/>
+	                                <input id="age" class="form-control" type="number" name="child_age1" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
 
 	                              </div>
 
@@ -1879,7 +1879,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="age">Age</label>
 
-                                <input id="age" class="form-control" type="number" name="child_age2"/>
+                                <input id="age" class="form-control" type="number" name="child_age2" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
 
                               </div>
 
@@ -1919,7 +1919,7 @@ $(document).ready(function(){
 
                                 <label class="control-label" for="age">Age</label>
 
-                                <input id="age" class="form-control" type="number" name="child_age3"/>
+                                <input id="age" class="form-control" type="number" name="child_age3" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57"/>
 
                               </div>
 
@@ -2247,7 +2247,7 @@ $(document).ready(function(){
 
                               <label class="control-label" for="employers_contact_number">Contact number</label>
 
-                              <input class="form-control" type="number" name="contactnum" id="employers_contact_number">
+                              <input class="form-control" type="number" name="contactnum" id="employers_contact_number" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
 
                             </div>
 
@@ -2303,7 +2303,7 @@ $(document).ready(function(){
 
                               <label class="control-label" for="monthly-salary">Monthly salary</label>
 
-                              <input class="form-control" type="number" name="salary" id="monthlysalary">
+                              <input class="form-control" type="number" name="salary" id="monthlysalary" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
 
 							  <div class="help-block with-errors" style="color: red;"></div>
 
@@ -2717,7 +2717,7 @@ $(document).ready(function(){
 
 	                    			<label class="control-label" for="license-number">License Number</label>
 
-	                    			<input type="number" class="form-control" id="license-number" name="licensenum">
+	                    			<input type="number" class="form-control" id="license-number" name="licensenum" min="0" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57">
 
 	                    		</div>
 

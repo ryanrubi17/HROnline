@@ -29,14 +29,13 @@ include 'connect.php';//database connection
 
   <!-- css link for style.css -->
   <link rel="stylesheet" type="text/css" href="custom_css/question.css">
-
 </head>
 
 <body>
   <form method="POST" action="agentform1.php">
     <div class="card container" id="questcon">
       <h6 style="padding-top: 30px"><i class="fa fa-book"> </i><b> Question</b> </h6>
-      <hr> <hr>
+      <hr>
         <dir class="row col-md-12" style="margin-top:0px;">
           <div class="form-group">
             <label class="control-label" >Applicant ID</label>
@@ -68,124 +67,174 @@ include 'connect.php';//database connection
           </div>
           <!-- start of question in initial interview Notes-->
           <div class="form-group label-floating">
-            <div class="text form-control" style="margin-bottom: 5px;">
+            <div class="form-control" style="margin-bottom: 5px;background-color:#eceeef">
               <b>Initial Interviewer Notes:</b>
             </div>
             <textarea class="form-control" rows="6" name="InitialInterviewerNotes" id="InitialInterviewerNotes" required></textarea>
           </div>
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-sm-12 col-md-12 col-lg-6">
               <div class="form-group">
                       <label class="control-label col-sm-4">Typing Skills:</label>
-                      <div class="col-md-7">
+                      <div class="col-md-8">
                           <input type="text" class="form-control gap" name="typeskills"  id="typeskills" required>
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="control-label col-sm-4">Communication:</label>
-                      <div class="col-md-7">
+                      <div class="col-md-8">
                           <input type="text" class="form-control gap" name="communicationskill"  id="communicationskill" required>
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="control-label col-sm-4">Work Availability:</label>
-                      <div class="col-md-7">
+                      <div class="col-md-8">
                           <input type="text" class="form-control gap" name="workavailability"  id="workavailability" required>
                       </div>
                   </div>
               </div>
 
-              <div class="col-md-6">
+              <div class="col-sm-12 col-md-12 col-lg-6">
                 <div class="form-group">
                       <label class="control-label col-sm-4">Accuracy:</label>
-                      <div class="col-md-7">
+                      <div class="col-md-8">
                           <input type="text" class="form-control gap" name="accuracy"  id="accuracy" required>
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="control-label col-sm-4">Expected Salary:</label>
-                      <div class="col-md-7">
+                      <div class="col-md-8">
                           <input type="text" class="form-control gap" name="expectedsalary"  id="expectedsalary" required>
                       </div>
                   </div>
                   <div class="form-group">
                       <label class="control-label col-sm-4">Expectation:</label>
-                      <div class="col-md-7">
+                      <div class="col-md-8">
                           <input type="text" class="form-control gap" name="expectation"  id="expectation" required> 
                       </div>
                   </div>
               </div>
               <!-- end of question in initial interview Notes-->
           </div><br>
-          <hr style="height: 10px; width: 100%; margin:0 auto;line-height:10px;background-color: #D3D3D3"; border:0 none; />
+          <hr />
           <br>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="EmploymentIssues" class="control-label col-md-4">Employment Issues:</label>
-                <div class="checkbox col-md-6">
-                  <label for="c1">YES  <input type="radio"  name="emp_issue" id="emp_issue" value="YES"></label>
-                  <label for="c2">NO  <input type="radio"  name="emp_issue"  id="emp_issue" value="NO"></label>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="MartialIssues:" class="control-label col-md-4">Martial Issues:</label>
-                <div class="checkbox col-md-6">
-                  <label for="c1">YES  <input type="radio"  name="martial_issue" id="martial_issue" value="YES"></label>
-                  <label for="c2">NO  <input type="radio"  name="martial_issue"  id="martial_issue" value="NO"></label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="MedicalIssues:" class="control-label col-md-4">Medical Issues::</label>
-                <div class="checkbox col-md-6">
-                  <label for="c1">YES  <input type="radio"  name="med_issue" id="med_issue" value="YES"></label>
-                  <label for="c2">NO  <input type="radio"  name="med_issue"  id="med_issue" value="NO"></label>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="Custody Issues::" class="control-label col-md-4">Custody Issues::</label>
-                <div class="checkbox col-md-6">
-                  <label for="c1">YES  <input type="radio"  name="custody_issue" id="custody_issue" value="YES"></label>
-                  <label for="c2">NO  <input type="radio"  name="custody_issue"  id="custody_issue" value="NO"></label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="PlanAbroad" class="control-label col-md-4">Plan to go abroad:</label>
-                <div class="checkbox col-md-6">
-                  <label for="c1">YES  <input type="radio"  name="plan_abroad" id="plan_abroad" value="YES"></label>
-                  <label for="c2">NO  <input type="radio"  name="plan_abroad"  id="plan_abroad" value="NO"></label>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="PlanSchool:" class="control-label col-md-4">Plan back to school:</label>
-                <div class="checkbox col-md-6">
-                  <label for="c1">YES  <input type="radio"  name="plan_school" id="plan_school" value="YES"></label>
-                  <label for="c2">NO  <input type="radio"  name="plan_school"  id="plan_school" value="NO" ></label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div align="right">
-            <button onclick="myfunction()" value ="submit" name="submit" id ="submit" type="submit" class="btn btn-primary" style="margin-bottom: 5px;">Submit</button>
-          </div>
-        </div>
-        
+			<div class="row">
+			  <div class="form-group col-lg-6">
+				<div class="row">
+				  <label class="control-label col-lg-5">Employment Issues:</label>
+				  <div class="checkbox col-lg-7">
+					<input type="radio" name="emp_issue" id="emp_issue" value="Yes">
+					<label for="emp_issue">  Yes</label>
+					<label for="emp_issue2"><input type="radio" name="emp_issue" id="emp_issue2" value="No">  No</label>
+					<label for="emp_issue3"><input type="radio" name="emp_issue" id="emp_issue3" value="NA">  N/A</label>
+					<div class="reveal-if-active row">
+					  <textarea id="emp_issue_text" name="emp_issue_text" placeholder="Description" class="form-control require-if-active col-xs-12 col-sm-12 col-md-12 col-lg-12" data-require-pair="#emp_issue"></textarea>
+					</div>				
+				  </div>
+				</div>
+			  </div>
+			  <div class="form-group col-lg-6">
+				<div class="row">
+				  <label class="control-label col-lg-5">Martial Issues:</label>
+				  <div class="checkbox col-lg-7">
+					<input type="radio" name="martial_issue" id="martial_issue" value="Yes">
+					<label for="martial_issue">  Yes</label>
+					<label for="martial_issue2"><input type="radio" name="martial_issue" id="martial_issue2" value="No">  No</label>
+					<label for="martial_issue3"><input type="radio" name="martial_issue" id="martial_issue3" value="NA">  N/A</label>
+					<div class="reveal-if-active row">
+					  <textarea id="martial_issue_text" name="martial_issue_text" placeholder="Description" class="form-control require-if-active col-xs-12 col-sm-12 col-md-12 col-lg-12" data-require-pair="#martial_issue"></textarea>
+					</div>				
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="form-group col-lg-6">
+				<div class="row">
+				  <label class="control-label col-lg-5">Medical Issues:</label>
+				  <div class="checkbox col-lg-7">
+					<input type="radio" name="med_issue" id="med_issue" value="Yes">
+					<label for="med_issue">  Yes</label>
+					<label for="med_issue2"><input type="radio" name="med_issue" id="med_issue2" value="No">  No</label>
+					<label for="med_issue3"><input type="radio" name="med_issue" id="med_issue3" value="NA">  N/A</label>
+					<div class="reveal-if-active row">
+					  <textarea id="med_issue_text" name="med_issue_text" placeholder="Description" class="form-control require-if-active col-xs-12 col-sm-12 col-md-12 col-lg-12" data-require-pair="#med_issue"></textarea>
+					</div>				
+				  </div>
+				</div>
+			  </div>
+			  <div class="form-group col-lg-6">
+				<div class="row">
+				  <label class="control-label col-lg-5">Custody Issues:</label>
+				  <div class="checkbox col-lg-7">
+					<input type="radio" name="custody_issue" id="custody_issue" value="Yes">
+					<label for="custody_issue">  Yes</label>
+					<label for="custody_issue2"><input type="radio" name="custody_issue" id="custody_issue2" value="No">  No</label>
+					<label for="custody_issue3"><input type="radio" name="custody_issue" id="custody_issue3" value="NA">  N/A</label>
+					<div class="reveal-if-active row">
+					  <textarea id="custody_issue_text" name="custody_issue_text" placeholder="Description" class="form-control require-if-active col-xs-12 col-sm-12 col-md-12 col-lg-12" data-require-pair="#custody_issue"></textarea>
+					</div>				
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="form-group col-lg-6">
+				<div class="row">
+				  <label class="control-label col-lg-5">Plan to go abroad:</label>
+				  <div class="checkbox col-lg-7">
+					<input type="radio" name="plan_abroad" id="plan_abroad" value="Yes">
+					<label for="plan_abroad">  Yes</label>
+					<label for="plan_abroad2"><input type="radio" name="plan_abroad" id="plan_abroad2" value="No">  No</label>
+					<label for="plan_abroad3"><input type="radio" name="plan_abroad" id="plan_abroad3" value="NA">  N/A</label>
+					<div class="reveal-if-active row">
+					  <textarea id="plan_abroad_text" name="plan_abroad_text" placeholder="Description" class="form-control require-if-active col-xs-12 col-sm-12 col-md-12 col-lg-12" data-require-pair="#plan_abroad"></textarea>
+					</div>				
+				  </div>
+				</div>
+			  </div>
+			  <div class="form-group col-lg-6">
+				<div class="row">
+				  <label class="control-label col-lg-5">Plan back to school:</label>
+				  <div class="checkbox col-lg-7">
+					<input type="radio" name="plan_school" id="plan_school" value="Yes">
+					<label for="plan_school">  Yes</label>
+					<label for="plan_school2"><input type="radio" name="plan_school" id="plan_school2" value="No">  No</label>
+					<label for="plan_school3"><input type="radio" name="plan_school" id="plan_school3" value="NA">  N/A</label>
+					<div class="reveal-if-active row">
+					  <textarea id="plan_school_text" name="plan_school_text" placeholder="Description" class="form-control require-if-active col-xs-12 col-sm-12 col-md-12 col-lg-12" data-require-pair="#plan_school"></textarea>
+					</div>				
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<div align="right">
+			  <button onclick="myfunction()" value ="submit" name="submit" id="submit" type="submit" class="btn btn-primary" style="margin-bottom: 5px;">Submit</button>
+			</div>
     </div>
   </form>
-
+  <script>
+	var FormStuff = {
+		init: function() {
+		this.applyConditionalRequired();
+		this.bindUIActions();
+	},
+		bindUIActions: function() {
+			$("input[type='radio']").on("change", this.applyConditionalRequired);
+		},
+		applyConditionalRequired: function() {
+			$(".require-if-active").each(function() {
+			  var el = $(this);
+			  if ($(el.data("require-pair")).is(":checked")) {
+				el.prop("required", true);
+			  } else {
+				el.prop("required", false);
+				$('.require-if-active').val('');
+			  }
+			});
+		}
+	};
+	FormStuff.init();
+  </script>
 </body>
 </html>

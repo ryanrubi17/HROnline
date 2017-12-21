@@ -1782,6 +1782,34 @@ error_reporting(0);
 			      					</div>
 
 								</div>
+								
+								<div class="col-md-6">
+								
+									<div class="form-group label-floating">
+
+										<label class="control-label" for="source">Application Source<span class="text-danger">*</span></label>
+
+										<select id="source" name="sourcex" class="select form-control" onchange="showsource(this)">
+
+											<option value="-Select Here-">-Select Here-</option>
+
+											<option value="Linked In">Linked In</option>
+
+											<option value="Website">AndersonGroup Site</option>
+
+											<option value="Facebook">Facebook</option>
+
+											<option value="From a Friend">Referral</option>
+
+											<option value="Job street">Jobstreet</option>
+
+										</select>
+
+										<span style="color: red;display:none;" id="source_validator">Select Application Source.</span>
+
+									</div>
+									
+								</div>
 
 							</div>
 

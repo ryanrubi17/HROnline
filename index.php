@@ -477,7 +477,7 @@ $(document).ready(function(){
 
 						            <input type="radio" name="sched" id="sched2" value="YES">
 
-						            YES
+						            Yes
 
 						          </label>
 
@@ -485,7 +485,7 @@ $(document).ready(function(){
 
 						            <input type="radio" name="sched" id="sched2" value="NO" checked>
 
-						            NO
+						            No
 
 						          </label>
 
@@ -503,7 +503,7 @@ $(document).ready(function(){
 
 						            <input type="radio" name="holidays" id="holidays2" value="YES">
 
-						            YES
+						            Yes
 
 						          </label>
 
@@ -511,7 +511,7 @@ $(document).ready(function(){
 
 						            <input type="radio" name="holidays" id="holidays2" value="NO" checked>
 
-						            NO
+						            No
 
 						          </label>
 
@@ -659,7 +659,7 @@ $(document).ready(function(){
 
 						            <input type="radio" name="sex123" id="s1" value="Male" checked="true">
 
-						            MALE	
+						            Male	
 
 						          </label>
 
@@ -667,7 +667,7 @@ $(document).ready(function(){
 
 						            <input type="radio" name="sex123" id="s1" value="Female" >
 
-						            FEMALE
+						            Female
 
 						          </label>
 
@@ -801,6 +801,34 @@ $(document).ready(function(){
 
 			      					</div>
 
+								</div>
+								
+								<div class="col-md-6">
+								
+									<div class="form-group label-floating">
+
+										<label class="control-label" for="source">Application Source<span class="text-danger">*</span></label>
+
+										<select id="source" name="sourcex" class="select form-control" onchange="showsource(this)">
+
+											<option value="-Select Here-">-Select Here-</option>
+
+											<option value="Linked In">Linked In</option>
+
+											<option value="Website">AndersonGroup Site</option>
+
+											<option value="Facebook">Facebook</option>
+
+											<option value="From a Friend">Referral</option>
+
+											<option value="Job street">Jobstreet</option>
+
+										</select>
+
+										<span style="color: red;display:none;" id="source_validator">Select Application Source.</span>
+
+									</div>
+									
 								</div>
 
 							</div>
@@ -3057,9 +3085,9 @@ $(document).ready(function(){
 
 						</div>
 
-						<div class="row col-md-16">
+						<div class="row col-md-12">
 
-					      <div class="col-md-4">
+					      <div class="col-md-6">
 
 					      	<div class="form-group">
 
@@ -3087,7 +3115,7 @@ $(document).ready(function(){
 
 					      </div>
 
-						  <div class="col-md-4">
+						  <div class="col-md-6">
 
 					      	<div class="form-group label-floating">
 
@@ -3101,7 +3129,7 @@ $(document).ready(function(){
 
 					      </div>
 
-					      <div class="col-md-4">
+					      <!--<div class="col-md-4">
 
 					      	<div class="form-group label-floating">
 
@@ -3141,7 +3169,7 @@ $(document).ready(function(){
 
 						    </div>
 
-						  </div>
+						  </div>-->
 
 						  
 

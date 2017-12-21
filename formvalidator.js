@@ -99,6 +99,7 @@ $( "#fnext" ).on( "click", function() {
 		var date_ofbirth = document.getElementById("bday123").value;
 		var placeofbirth = document.getElementById("placeofbirth").value;
 		var otherpos = document.getElementById("otherpositionDiv").value;
+		var source = document.getElementById("source").value;
 		
 		function fnext_required(){
 			$("#apply_position").blur();
@@ -107,7 +108,16 @@ $( "#fnext" ).on( "click", function() {
 			$("#empdate").blur();
 			$("#bday123").blur();
 			$("#placeofbirth").blur();
+			$("#source").blur();
 		}
+		
+		if(source=="-Select Here-"){
+			$("#source").blur();
+			$("#source").focus();
+			document.getElementById("source").style.borderColor = "red";
+			document.getElementById("source_validator").style.display="block";	
+		}
+		
 		if(apply_position=="Others"){
 			if(otherpos==""){
 				fnext_required();
@@ -115,38 +125,50 @@ $( "#fnext" ).on( "click", function() {
 				$("#otherpositionDiv").focus();
 				
 			}else{
-			if( apply_position =="Select Position"){
-			fnext_required();
-			document.getElementById("positionErrorMessage").style.display = 'block';
-				$("#apply_position").focus();
-			}
-			else if( lastName ==""){
+				if( apply_position =="Select Position"){
 				fnext_required();
-				$("#lname").focus();
-			}else if(firstName==""){
-				fnext_required();
-				$("#fname").focus(); 
-			}else if(employ_date==""){
-				fnext_required();
-				$("#empdate").focus();
-			}else if(date_ofbirth==""){
-				fnext_required();
-				$("#bday123").focus();
-			}else if(placeofbirth==""){
-				fnext_required();
-				$("#placeofbirth").focus();
-			}else{
-				document.getElementById("container1").style.display="none";
-				document.getElementById("container2").style.display="block";
-			}
+				document.getElementById("positionErrorMessage").style.display = 'block';
+					$("#apply_position").focus();
+				}else if(source=="-Select Here-"){
+					$("#source").blur();
+					$("#source").focus();
+					//$("#source").style.borderColor = "red";;
+					//$("#source_validator").style.display="block";
+					document.getElementById("source").style.borderColor = "red";
+					document.getElementById("source_validator").style.display="block";	
+				}else if( lastName ==""){
+					fnext_required();
+					$("#lname").focus();
+				}else if(firstName==""){
+					fnext_required();
+					$("#fname").focus(); 
+				}else if(employ_date==""){
+					fnext_required();
+					$("#empdate").focus();
+				}else if(date_ofbirth==""){
+					fnext_required();
+					$("#bday123").focus();
+				}else if(placeofbirth==""){
+					fnext_required();
+					$("#placeofbirth").focus();
+				}else{
+					document.getElementById("container1").style.display="none";
+					document.getElementById("container2").style.display="block";
+				}
 			}
 		}else{
 			if( apply_position =="Select Position"){
 			fnext_required();
 			document.getElementById("positionErrorMessage").style.display = 'block';
 				$("#apply_position").focus();
-			}
-			else if( lastName ==""){
+			}else if(source=="-Select Here-"){
+				$("#source").blur();
+				$("#source").focus();
+				//$("#source").style.borderColor = "red";;
+				//$("#source_validator").style.display="block";
+				document.getElementById("source").style.borderColor = "red";
+				document.getElementById("source_validator").style.display="block";	
+			}else if( lastName ==""){
 				fnext_required();
 				$("#lname").focus();
 			}else if(firstName==""){
@@ -389,6 +411,7 @@ $( "#saveQuit" ).on( "click", function() {
 	var placeofbirth = document.getElementById("placeofbirth").value;
 	var email1 = document.getElementById("email").value;
 	var otherpos = document.getElementById("otherpositionDiv").value;
+	var source = document.getElementById("source").value;
 		
 		
 		
@@ -406,6 +429,7 @@ $( "#saveQuit" ).on( "click", function() {
 		$("#empdate").blur();
 		$("#bday123").blur();
 		$("#placeofbirth").blur();
+		$("#source").blur();
 		
 		
 		
@@ -437,6 +461,9 @@ $( "#saveQuit" ).on( "click", function() {
 			}else if(placeofbirth==""){
 				required_field();
 				$("#placeofbirth").focus();
+			}else if(source=="-Select Here-"){
+				required_field();
+				$("#source").focus();
 			}else{
 				//document.getElementById("positionErrorMessage").style.display = 'none';
 				$('#SaveQuitModal').modal('show');
@@ -467,9 +494,10 @@ $( "#saveQuit" ).on( "click", function() {
 		}else if(placeofbirth==""){
 			required_field();
 			$("#placeofbirth").focus();
-		}
-			
-		else{
+		}else if(source=="-Select Here-"){
+			required_field();
+			$("#source").focus();
+		}else{
 			//document.getElementById("positionErrorMessage").style.display = 'none';
 			$('#SaveQuitModal').modal('show');
 			//$('input,select, textarea').attr('required', false);
@@ -482,7 +510,7 @@ $( "#saveQuit2" ).on( "click", function() {
 	
 	$('#SaveQuitModal').modal('show');
 	var email2 = document.getElementById("email").value;
-		if(email2==''){
+		if(email2==''){f
 			document.getElementById('SaveandQuit').innerHTML = 'Note: A reference code will appear once you click "yes". This will allow you to continue your application form.';
 		}else{
 			document.getElementById('SaveandQuit').innerHTML = "Note: A <b>reference code </b>will also be sent to your email. Don't worry, you may still continue where you left of.";

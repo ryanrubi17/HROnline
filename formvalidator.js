@@ -129,13 +129,6 @@ $( "#fnext" ).on( "click", function() {
 				fnext_required();
 				document.getElementById("positionErrorMessage").style.display = 'block';
 					$("#apply_position").focus();
-				}else if(source=="-Select Here-"){
-					$("#source").blur();
-					$("#source").focus();
-					//$("#source").style.borderColor = "red";;
-					//$("#source_validator").style.display="block";
-					document.getElementById("source").style.borderColor = "red";
-					document.getElementById("source_validator").style.display="block";	
 				}else if( lastName ==""){
 					fnext_required();
 					$("#lname").focus();
@@ -161,13 +154,6 @@ $( "#fnext" ).on( "click", function() {
 			fnext_required();
 			document.getElementById("positionErrorMessage").style.display = 'block';
 				$("#apply_position").focus();
-			}else if(source=="-Select Here-"){
-				$("#source").blur();
-				$("#source").focus();
-				//$("#source").style.borderColor = "red";;
-				//$("#source_validator").style.display="block";
-				document.getElementById("source").style.borderColor = "red";
-				document.getElementById("source_validator").style.display="block";	
 			}else if( lastName ==""){
 				fnext_required();
 				$("#lname").focus();

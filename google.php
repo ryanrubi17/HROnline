@@ -462,11 +462,13 @@ background: none;
 
 						<li id='ThirdInterview'style = "position:absolute; visibility:hidden;" class= "openOveride"><button class=' btn btn-default' data-toggle='modal' onclick = 'setValValue("Third Interview")'data-target ='#interviewModal' data-type='Third Interview'><i class="fa fa-users"></i> Third Interview</button></li>
 
-						<li id='FinalInterview'style = "position:absolute; visibility:hidden;"class= "openOveride"><button class=' btn btn-default' data-toggle='modal' onclick = 'setValValue("Final Interview")'data-target ='#interviewModal'data-type='Final Interview'><i class="fa fa-users"></i> Final Interview</button></li>
+						<li id='FinalInterview'style = "position:absolute; visibility:hidden;"class= "openOveride"><button class=' btn btn-default' data-toggle='modal' onclick = 'setValValue("Final Interview")'data-target ='#interviewModal'data-type='Final Interview'><i class="fa fa-users"></i> Final Interview</button></li>			
 
 						<li id='HireAccept'style = "position:absolute; visibility:hidden;"class= "openOveride"><button class=' btn btn-default' data-toggle='modal' data-target =''data-type='hiredAccepted'><i class="fa fa-handshake-o"></i> Hired</button></li>
 
-						<li><button style="color:red" class='actionbtn btn btn-default' data-type='Rejected' data-hcolor='white' data-content="Are you sure you want to reject the selected application/s?" data-headerx="Reject Application<br><h6><i class='fa fa-warning'></i></h6>" data-headercolor='#ff4d4d'><i class="fa fa-warning"></i>Reject</button></li>
+						<li><button style="color:red" class='actionbtn btn btn-default' data-type='Rejected' data-hcolor='white' data-content="Are you sure you want to reject the selected application/s?" data-headerx="Reject Application<br><h6><i class='fa fa-warning'></i></h6>" data-headercolor='#ff4d4d'><i class="fa fa-warning"></i> Reject</button></li>
+						
+						<li><button  class='actionbtn2 btn btn-danger openOveride' data-type='No Show' style = "position:absolute; visibility:hidden;"><i class="fa fa-eye-slash"></i> No Show</button></li>
 
 						<li></li>
 
@@ -736,7 +738,7 @@ background: none;
 
 										$class2 = 'label label-info';
 
-									}elseif($row['Stage'] == 'Failed'){
+									}elseif($row['Stage'] == 'Failed' || $row['Stage'] == 'No Show'){
 
 										$class2 = 'label label-danger';
 
@@ -3223,7 +3225,7 @@ var waitingDialog = waitingDialog || (function ($) {
 
 			    	}
 
-			    	else if(typex == 'Failed'){
+			    	else if(typex == 'Failed' || typex == 'No Show'){
 
 			    		setClass = 'label-danger';
 
@@ -3271,7 +3273,7 @@ var waitingDialog = waitingDialog || (function ($) {
 
 										dtNodes[i].cells[0].innerHTML = "<input id='cb"+value+"' data-id='"+value+"' type='checkbox' class='checkbox'/>";
 
-									}else if(typex == 'Passed' || typex == 'Failed' || typex == 'Passed - Endorsed'){
+									}else if(typex == 'Passed' || typex == 'Failed' || typex == 'Passed - Endorsed' || typex == 'No Show'){
 
 										dtNodes[i].cells[statusTdNum+1].innerHTML = "<span id='span"+value+"' style='color:white; font-size: 105%;'  class='label "+setClass+"'>"+typex+"</span>";
 

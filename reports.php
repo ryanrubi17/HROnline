@@ -181,8 +181,8 @@
 					</div>
 					<h1></h1>
 					 
-						<div class="row" style = 'margin-left:10%;'>
-							<div class="col-md-5">
+						<div class="row">
+							<div class="col-md-10" style="width:70%; margin-left:16%">
 								<div class="panel panel-info">
 									<div class="panel-heading " style = 'background-color:#dab358'>
 										<h3 class="text-center" style="font-family:'Trebuchet MS', Helvetica, sans-serif;color:white;">Age Bracket </h3>
@@ -198,7 +198,7 @@
 								</div>
 							</div>
 
-							<div class="col-md-5" id='ab' style = 'margin-right:10%; float:right;'>
+							<div class="col-md-5" id='ab' style = 'display:none'>
 								<div class="panel panel-info">
 									<div class="panel-heading " style = 'background-color:#dab358'>
 										<h3 class="text-center" id='a' style="font-family:'Trebuchet MS', Helvetica, sans-serif;color:white;">Gender</h3>
@@ -1282,7 +1282,7 @@
 		var myChart9 = new Chart(ctx9, {
 			type: 'bar',
 			data: {
-				labels: ['Jobstreet', 'Linked In', 'Facebook', 'From a Friend','Website','Others'],
+				labels: ['Jobstreet', 'Linked In', 'Facebook', 'Referral','AndersonGroup Site','Others','Application','Jobfair','Indeed'],
 				datasets: [
 					{
 						data: allSource,

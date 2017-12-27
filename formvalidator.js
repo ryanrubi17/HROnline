@@ -144,6 +144,11 @@ $( "#fnext" ).on( "click", function() {
 				}else if(placeofbirth==""){
 					fnext_required();
 					$("#placeofbirth").focus();
+				}else if(source=="-Select Here-"){
+					$("#source").blur();
+					$("#source").focus();
+					document.getElementById("source").style.borderColor = "red";
+					document.getElementById("source_validator").style.display="block";	
 				}else{
 					document.getElementById("container1").style.display="none";
 					document.getElementById("container2").style.display="block";
@@ -169,6 +174,11 @@ $( "#fnext" ).on( "click", function() {
 			}else if(placeofbirth==""){
 				fnext_required();
 				$("#placeofbirth").focus();
+			}else if(source=="-Select Here-"){
+				$("#source").blur();
+				$("#source").focus();
+				document.getElementById("source").style.borderColor = "red";
+				document.getElementById("source_validator").style.display="block";	
 			}else{
 				document.getElementById("container1").style.display="none";
 				document.getElementById("container2").style.display="block";

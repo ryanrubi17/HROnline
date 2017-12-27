@@ -314,7 +314,13 @@
 
 				sum(Case when Application_source ='Website' then 1 else 0 end) as 'Website',
 
-				sum(Case when Application_source ='Others' or Application_source ='' then 1 else 0 end) as 'Others' ".$mainQuery ;
+				sum(Case when Application_source ='Others' or Application_source ='' then 1 else 0 end) as 'Others',
+				
+				sum(Case when Application_source ='Walk-in' or Application_source ='Walk in' then 1 else 0 end) as 'Walk-in',
+				
+				sum(Case when Application_source ='Jobfair' then 1 else 0 end) as 'Jobfair',
+				
+				sum(Case when Application_source ='Indeed' then 1 else 0 end) as 'Indeed'	".$mainQuery ;
 
 			
 
@@ -333,6 +339,12 @@
 						echo "<script>allSource.push(".$row['Website'].")</script>";
 
 						echo "<script>allSource.push(".$row['Others'].")</script>";
+						
+						echo "<script>allSource.push(".$row['Walk-in'].")</script>";
+						
+						echo "<script>allSource.push(".$row['Jobfair'].")</script>";
+						
+						echo "<script>allSource.push(".$row['Indeed'].")</script>";
 
 					}
 

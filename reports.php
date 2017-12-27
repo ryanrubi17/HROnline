@@ -268,7 +268,7 @@
 
 					
 						<div class="row">
-							<div class="col-md-6">
+							<!--<div class="col-md-6">
 								<div class="panel panel-info">
 									<div class="panel-heading " style = 'background-color:#dab358'>
 										<h3 class="text-center" style="font-family:'Trebuchet MS', Helvetica, sans-serif;color:white;">Application Source</h3>
@@ -281,8 +281,8 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-md-6">
+							</div>-->
+							<div class="col-lg-10" style = 'width:70%; margin-left:16%'>
 								<div class="panel panel-info">
 									<div class="panel-heading " style = 'background-color: #dab358'>
 										<h3 class="text-center" style="font-family:'Trebuchet MS', Helvetica, sans-serif;color:white;">Applicant Status</h3>

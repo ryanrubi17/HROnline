@@ -318,6 +318,23 @@
 								</div>
 							</div>
 						</div>
+						
+						<div class = 'row' >
+							<div class="col-lg-12">
+								<div class="panel panel-info">
+									<div class="panel-heading " style = 'background-color:#dab358'>
+									<h3 class="text-center" style="font-family:'Trebuchet MS', Helvetica, sans-serif;color:white;">Locations</h3>
+									</div>
+									<div id="chart9" class="panel-collapse collapse in">
+                                          <div class="container"></div>
+										<div class="panel-body">
+											<canvas id="myChart10" height="180px"></canvas>
+											<hr>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
 						
 					<h1></h1>
@@ -360,6 +377,7 @@
 		var ageJobfair = [];
 		var ageGoogle = [];
 		var allSource = [];
+		var allLocation = [];
 		var stats=[];
 		curDate = new Date();
 		var createdDateTo2 = "";
@@ -1282,7 +1300,7 @@
 		var myChart9 = new Chart(ctx9, {
 			type: 'bar',
 			data: {
-				labels: ['Jobstreet', 'Linked In', 'Facebook', 'Referral','AndersonGroup Site','Others','Application','Jobfair','Indeed'],
+				labels: ['Jobstreet', 'Linked In', 'Facebook', 'Referral','AndersonGroup Site','Application','Jobfair','Indeed'],
 				datasets: [
 					{
 						data: allSource,
@@ -1334,7 +1352,60 @@
 		});
 
             
-		
+		var ctx10 = $('#myChart10');
+		var myChart10 = new Chart(ctx10, {
+			type: 'bar',
+			data: {
+				labels: ['Metro Manila (NCR)','Ilocos Region','Cagayan Valley','Central Luzon','CALABARZON','MIMAROPA','Bicol Region','Western Visayas','Central Visayas','Eastern Visayas','Zamboanga Peninsula','Northern Mindanao','Davao Region','SOCCSKSARGEN','CARAGA','ARMM','Cordillera Administrative Region'],
+				datasets: [
+					{
+						data: allLocation,
+						label:'Locations',
+						backgroundColor: 'rgba(54, 162, 235, 2)',
+						borderColor: 'rgba(54, 162, 235, 1)',
+						borderWidth: 1
+
+					}
+				]
+			},
+			options: {legend:false,
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero:true
+						}
+					}]
+				},"animation": {
+				  "duration": 1,
+				  "onComplete": function() {
+					var chartInstance = this.chart,
+					ctx = chartInstance.ctx;
+					ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+					ctx.textAlign = 'center';
+					ctx.textBaseline = 'bottom';
+					ctx.fillStyle = "black";
+					this.data.datasets.forEach(function(dataset, i) {
+					  var meta = chartInstance.controller.getDatasetMeta(i);
+					  meta.data.forEach(function(bar, index) {
+						var data = dataset.data[index];
+						ctx.fillText(data, bar._model.x, bar._model.y - 5);
+					  });
+					});
+				  }
+				}
+			},tooltips: {
+							callbacks: {
+										title: function(tooltipItems, data) {
+										  return '';
+										},
+										label: function(tooltipItem, data) {
+											  var datasetLabel = '';
+											  var label = data.labels[tooltipItem.index];
+											  return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+											}
+										}
+			},
+		});
 		
 		
 		
@@ -1544,6 +1615,24 @@
 			});
 		});	
 		$("#myChart9").click(function(e){
+			var activeBars = A.getElementAtEvent(e);
+			var imfrom;
+			var index = activeBars[0]['_chart'].config.data;
+			var idx = activeBars[0]['_index'];
+			imfrom = index.labels[idx];
+			$.ajax({
+				url: "query.php",
+				type: "POST",
+				data: {source:imfrom, reports: 1,year:$('#thisYear').text()},
+				success: function(data){
+						window.open('google.php');
+				},
+				error: function(data){
+					alert(data);
+				}
+			});
+		});
+		$("#myChart10").click(function(e){
 			var activeBars = A.getElementAtEvent(e);
 			var imfrom;
 			var index = activeBars[0]['_chart'].config.data;

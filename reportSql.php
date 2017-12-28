@@ -15,6 +15,8 @@
 											`status` as 'Status',
 
 											`Current Address` as 'Address',
+											
+											`CURRENT_REGION` as 'CURRENT_REGION',
 
 											concat(`3.2 Position Title`, ' ', `2.2 Position Title`,' ',`1.2 Position Title`,' ',`4.2 Position Title`) as 'Previous Jobs',
 
@@ -338,7 +340,7 @@
 
 						echo "<script>allSource.push(".$row['Website'].")</script>";
 
-						echo "<script>allSource.push(".$row['Others'].")</script>";
+						/* echo "<script>allSource.push(".$row['Others'].")</script>"; */
 						
 						echo "<script>allSource.push(".$row['Walk-in'].")</script>";
 						
@@ -346,6 +348,85 @@
 						
 						echo "<script>allSource.push(".$row['Indeed'].")</script>";
 
+					}
+
+				}
+				
+			/*Locations*/
+
+				$locationSql = "select sum(Case when CURRENT_REGION = 'Metro Manila (NCR)' then 1 else 0 end) as 'NCR',
+
+				sum(Case when CURRENT_REGION = 'Ilocos Region' then 1 else 0 end) as 'Ilocos Region',
+
+				sum(Case when CURRENT_REGION = 'Cagayan Valley' then 1 else 0 end) as 'Cagayan Valley',
+
+				sum(Case when CURRENT_REGION = 'Central Luzon' then 1 else 0 end) as 'Central Luzon',
+
+				sum(Case when CURRENT_REGION = 'CALABARZON' then 1 else 0 end) as 'CALABARZON',
+
+				sum(Case when CURRENT_REGION = 'MIMARO' then 1 else 0 end) as 'MIMAROPA',
+				
+				sum(Case when CURRENT_REGION = 'Bicol Region' then 1 else 0 end) as 'Bicol Region',
+				
+				sum(Case when CURRENT_REGION = 'Western Visayas' then 1 else 0 end) as 'Western Visayas',
+				
+				sum(Case when CURRENT_REGION = 'Central Visayas' then 1 else 0 end) as 'Central Visayas',
+
+				sum(Case when CURRENT_REGION = 'Eastern Visayas' then 1 else 0 end) as 'Eastern Visayas',
+				
+				sum(Case when CURRENT_REGION = 'Zamboanga Peninsula' then 1 else 0 end) as 'Zamboanga Peninsula',
+				
+				sum(Case when CURRENT_REGION = 'Northern Mindanao' then 1 else 0 end) as 'Northern Mindanao',
+				
+				sum(Case when CURRENT_REGION = 'Davao Region' then 1 else 0 end) as 'Davao Region',
+				
+				sum(Case when CURRENT_REGION = 'SOCCSKSARGEN' then 1 else 0 end) as 'SOCCSKSARGEN',
+				
+				sum(Case when CURRENT_REGION = 'CARAGA' then 1 else 0 end) as 'CARAGA',
+				
+				sum(Case when CURRENT_REGION = 'ARMM' then 1 else 0 end) as 'ARMM',
+				
+				sum(Case when CURRENT_REGION = 'Cordillera Administrative Region (CAR)' then 1 else 0 end) as 'CAR' ".$mainQuery ;
+
+			
+
+				if($locationResult = $conn->query($locationSql)){
+
+					while($row = $locationResult->fetch_assoc()){
+
+						echo "<script>allLocation.push(".$row['NCR'].")</script>";
+
+						echo "<script>allLocation.push(".$row['Ilocos Region'].")</script>";
+
+						echo "<script>allLocation.push(".$row['Cagayan Valley'].")</script>";
+
+						echo "<script>allLocation.push(".$row['Central Luzon'].")</script>";
+
+						echo "<script>allLocation.push(".$row['CALABARZON'].")</script>";
+
+						echo "<script>allLocation.push(".$row['MIMAROPA'].")</script>";
+
+						echo "<script>allLocation.push(".$row['Bicol Region'].")</script>";
+
+						echo "<script>allLocation.push(".$row['Western Visayas'].")</script>";
+
+						echo "<script>allLocation.push(".$row['Central Visayas'].")</script>";
+
+						echo "<script>allLocation.push(".$row['Eastern Visayas'].")</script>";
+
+						echo "<script>allLocation.push(".$row['Zamboanga Peninsula'].")</script>";
+
+						echo "<script>allLocation.push(".$row['Northern Mindanao'].")</script>";
+
+						echo "<script>allLocation.push(".$row['Davao Region'].")</script>";
+
+						echo "<script>allLocation.push(".$row['SOCCSKSARGEN'].")</script>";
+
+						echo "<script>allLocation.push(".$row['CARAGA'].")</script>";
+
+						echo "<script>allLocation.push(".$row['ARMM'].")</script>";
+
+						echo "<script>allLocation.push(".$row['CAR'].")</script>";
 					}
 
 				}

@@ -6,9 +6,9 @@
 	//unset($_SESSION['currentYear']);
 	$_SESSION['previous-page'] = 'reports.php';
 	$id = $_SESSION['id'];
-	$startDate = "";
-	$endDate = "";
-	if(isset($_POST['startDate'])){
+	$startDate = "2017-01-01";
+	$endDate = date('Y-m-d');
+	/* if(isset($_POST['startDate'])){
 		$startDate = $_POST['startDate'];
 		$endDate = $_POST['endDate'];
 		unset($_POST['startDate']);
@@ -16,7 +16,7 @@
 	}else{
 		$startDate = date('Y-m-d', strtotime('first day of this month'));
 		$endDate = date('Y-m-d', strtotime('-1d')); 
-	}
+	} */
 	$currentYear = date('Y',strtotime($endDate)); 
 ?>
 
@@ -61,7 +61,8 @@
 		<!-- Inline CSS based on choices in "Settings" tab -->
 		<style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form{font-family: Arial, Helvetica, sans-serif; color: black}.bootstrap-iso form button, .bootstrap-iso form button:hover{color: white !important;} .asteriskField{color: red;}</style>
 
-
+		<div style="position:fixed;bottom:20px;right:20px;z-index:100;background-color:#f44336;color:#fff;box-shadow:0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12)" id="printReport" class="btn" onclick="save()">Print</div>
+		
 		<div id="main" >
 			<div class="row" style ="position:fixed; z-index:1; width:100%; margin-top:-20px; background-color:#dfe5ec;" id = 'topDiv'>
 				<nav  class="navbar navbar-inverse" >
@@ -83,11 +84,10 @@
 								<div class="panel panel-info">
 									<div class="panel-heading " style = 'background-color:#97b6ca;'>
 									<h4 style='color:black'><b>Monthly Number of Applicants (<span id="thisYear"><?php echo $currentYear; ?></span>)</b>
-										<legend class="text-center"><i href="#chart7" data-parent="#accordion" data-toggle="collapse" class="fa fa-angle-down pull-right "></i></legend></h4>
+										<!--<legend class="text-center"><i href="#chart7" data-parent="#accordion" data-toggle="collapse" class="fa fa-angle-down pull-right "></i></legend>--></h4>
 									</div>
-									<div id="chart7" class="panel-collapse collapse in">
+									<div id="chart7">
 										<div class="panel-body container-fluid" style="width: 100% ;height: 450px ;">
-										<span class ="btn"><a  style = "float:right; top:10%;" class = "fa fa-print" id ="printFixData" onclick = "save()">Print</a></span>  
                                             <div class="container">
                                             <h2 style="font-family:'Trebuchet MS', Helvetica, sans-serif; margin-left:16em;"><!--Months Graph--> </h2>
 											<div id="chart7" class="panel-collapse collapse in">
@@ -109,10 +109,10 @@
 					<div class="col-lg-12">
 					<div class="panel-heading " style = 'background-color:#97b6ca;color:black'>
 					<h4><b>Total Number of Applicants within Set Date</b></h4>
-						<legend class="text-center" style ='margin-bottom:1%;'><i href="#adjustDate" data-parent="#accordion" data-toggle="collapse" class="fa fa-angle-down pull-right collapsed" aria-expanded = 'false' aria-controls='adjustDate'> </i></legend>
+						<!--<legend class="text-center" style ='margin-bottom:1%;'><i href="#adjustDate" data-parent="#accordion" data-toggle="collapse" class="fa fa-angle-down pull-right collapsed" aria-expanded = 'false' aria-controls='adjustDate'> </i></legend>-->
 					<h1> </h1>
 					</div>
-			<div id ='adjustDate' class="collapse" style = 'background-color: #dfe5ec; padding-top:1.5%;'>
+			<div id ='adjustDate' style = 'background-color: #dfe5ec; padding-top:1.5%;'>
 						<div class= 'row' > 
 							<div class="bootstrap-iso" >
 							   <div class="col-md-6 col-sm-6 col-xs-12">
@@ -224,8 +224,8 @@
 					<div class="col-lg-12">
 					<div class="panel-heading " style = 'background-color:#97b6ca;color:black;'>
 					<h4><b>Application Source and Status Graph</b>
-					<legend class="text-center" style ='margin-bottom:1%;'><i href="#fixInfo" data-parent="#accordion" data-toggle="collapse" class="fa fa-angle-down pull-right collapsed" aria-expanded = 'false' aria-controls='fixInfo'></i></legend></h4></div>
-                 <div id ='fixInfo' class="collapse" style = 'background-color: #dfe5ec; padding-top:2%;'>	
+					<!--<legend class="text-center" style ='margin-bottom:1%;'><i href="#fixInfo" data-parent="#accordion" data-toggle="collapse" class="fa fa-angle-down pull-right collapsed" aria-expanded = 'false' aria-controls='fixInfo'></i></legend>--></h4></div>
+                 <div id ='fixInfo' style = 'background-color: #dfe5ec; padding-top:2%;'>	
 						<h1></h1>
 					<div class= 'row' > 
 							<div class="bootstrap-iso" >
@@ -323,7 +323,7 @@
 							<div class="col-lg-12">
 								<div class="panel panel-info">
 									<div class="panel-heading " style = 'background-color:#dab358'>
-									<h3 class="text-center" style="font-family:'Trebuchet MS', Helvetica, sans-serif;color:white;">Locations</h3>
+									<h3 class="text-center" style="font-family:'Trebuchet MS', Helvetica, sans-serif;color:white;">Applicant Locations</h3>
 									</div>
 									<div id="chart9" class="panel-collapse collapse in">
                                           <div class="container"></div>
@@ -566,7 +566,7 @@
 				}
 			});
 
-			  function save() {
+			  /* function save() {
 				document.getElementById("myChart7").style.border = "2px solid";
 				var canvas = document.getElementById();
 				var dataURL = canvas.toDataURL();
@@ -575,7 +575,7 @@
 
 				document.getElementById("imageDownload").href = dataURL;
 
-			}
+			} */
 			
 			
 		}
@@ -609,7 +609,7 @@
 			
 			
 		function save(){
-			var canvas = document.getElementById("myChart7");
+			/* var canvas = document.getElementById("myChart7");
 			var dataUrl = canvas.toDataURL(); //attempt to save base64 string to server using this var  
 			var windowContent = '<!DOCTYPE html>';
 			windowContent += '<html>'
@@ -625,7 +625,36 @@
 			printWin.document.close();
 			printWin.focus();
 			printWin.print();
-			printWin.close();
+			printWin.close(); */
+			
+			var myChart7 = document.getElementById("myChart7");
+			var myChart4 = document.getElementById("myChart4");
+			var myChart9 = document.getElementById("myChart9");
+			var myChart10 = document.getElementById("myChart10");
+			var img7 = myChart7.toDataURL();
+			var img4 = myChart4.toDataURL();
+			var img9 = myChart9.toDataURL();
+			var img10 = myChart10.toDataURL();
+
+			var html  = '<html><head><title></title></head>';
+				html += '<body style="width: 100%; padding: 0; margin: 0;"';
+				html += ' onload="window.focus(); window.print(); window.close()">';
+				html += '<div style="border:4px solid #000;text-align:center;padding:10px;font-size:40px;font-weight:100">Reports and Summary</div>';
+				html += '<h1 style="margin:5% 0">Monthly Number of Applicants (2018)</h1>';
+				html += '<img src="' + img7 + '" width="100%" height="200px" />';
+				html += '<h1 style="margin:5% 0">Applicant Status</h1>';
+				html += '<img src="' + img4 + '" width="100%" />';
+				html += '<h1 style="margin:5% 0">Applicant Source</h1>';
+				html += '<img src="' + img9 + '" width="100%" height="380px" />';
+				html += '<h1 style="margin:5% 0">Applicant Locations</h1>';
+				html += '<img src="' + img10 + '" width="100%" height="400px" />';
+				html += '</body></html>';
+				
+			var printWindow = window.open('', 'to_print', '');
+
+			printWindow.document.open();
+			printWindow.document.write(html);
+			printWindow.document.close();
 			
 		}
 
@@ -1360,7 +1389,7 @@
 				datasets: [
 					{
 						data: allLocation,
-						label:'Locations',
+						label:'Applicant Locations',
 						backgroundColor: 'rgba(54, 162, 235, 2)',
 						borderColor: 'rgba(54, 162, 235, 1)',
 						borderWidth: 1

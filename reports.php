@@ -64,7 +64,7 @@
 		<div style="position:fixed;bottom:20px;right:20px;z-index:100;background-color:#f44336;color:#fff;box-shadow:0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12)" id="printReport" class="btn" onclick="save()">Print</div>
 		
 		<div id="main" >
-			<div class="row" style ="position:fixed; z-index:1; width:100%; margin-top:-20px; background-color:#dfe5ec;" id = 'topDiv'>
+			<div class="row" style ="z-index:1; width:100%; margin-top:-20px; background-color:#dfe5ec;" id = 'topDiv'>
 				<nav  class="navbar navbar-inverse" >
 				  <div class="container-fluid" id= 'navHead' style = 'background-color:#dfe5ec;'>
 						<a class="navbar-brand" style="cursor:pointer; z-index:1;" href="#"><h4 style="font-family:'Trebuchet MS', Helvetica, sans-serif; cursor:pointer; z-index:1; color:#00008B;" onclick="openNav()"><i class="fa fa-bars"></i> Menu</h4></a>		  

@@ -42,6 +42,7 @@
 	echo' 
 	
 	<a class="navi" href="google.php?id='.$id.'"><h5>Application List</h5></a>
+	<a class="navi" style="text-align: left;" href="applicants.php?id='.$id.'"><h5>Applicants</h5></a>
 	<a class="navi" style="text-align: left;" href="reports.php?id='.$id.'"><h5>Reports</h5></a>
 	<a class="navi" style="text-align: left;" href="addNewPosition.php?id='.$id.'"><h5>Add Position</h5></a>
 	<a class="navi" style="text-align: left;" href="createAccount.php?id='.$id.'"><h5>Create User Accounts</h5></a>

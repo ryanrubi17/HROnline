@@ -81,7 +81,7 @@ background: none;
 	<?php  
 		
 
-	$id = $_GET['id'];
+	$id = isset($_GET['id']) ? $_GET['id'] : ' ';
 	include 'sidenavhtml.php';
 	?>
 	<div id="main" >
@@ -94,7 +94,7 @@ background: none;
         </nav>
         <div class="col-sm-2"></div>
         <div class="col-sm-8" style="margin-top:1em; ">
-					<div class="col-md-12 card">
+					<br><br><br><div class="col-md-12 card">
 						<img src="ag.png" alt="andersonrecruitlogo.png" style="width:75%;height:75%; margin-top:2em; margin-left:8em;"/>
 						<div class="modal-body" style="text-align: justify;text-justify: inter-word;font-size:14px;">
                             <!--Anderson Recruitment Management System (ARMS)-->

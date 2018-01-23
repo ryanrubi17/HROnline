@@ -1,9 +1,14 @@
 <?php
 	require_once('auth.php');
 	require_once('connect.php');
-	$query = "SELECT NAME, POSITION, `EMAIL ADDRESS` FROM tbl_application WHERE NOT NAME=',' AND NOT `EMAIL ADDRESS`='' ORDER BY ID";
+	$query = "SELECT ID, NAME, POSITION, `EMAIL ADDRESS` FROM tbl_application WHERE NOT NAME=',' AND NOT `EMAIL ADDRESS`='' ORDER BY ID";
 	$result = $conn->query($query);
 	$count = $result->num_rows;
+	if($count <= 1) {
+		$label = "applicant";
+	} else {
+		$label = "applicants";
+	}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -17,26 +22,10 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="css/sidenav.css">
-	<style> 
-	.getCSV, .getExcel, .getCSV:hover, .getExcel:hover {
-	    background-color: #208c82;
-		padding: 10px;
-		border-radius: .5rem;
-		text-decoration: none;
-		cursor: pointer;
-		color: #ffffff;
-		border: 1px solid #00887b;
-		box-shadow: 0 5px 10px 0 #808080;
-	}
-	.getCSV:active, .getExcel:active, .getCSV:visited, .getExcel:visited {
-	    background-color: #196f67;
-		border: 1px solid #025850;
-		box-shadow: 0 5px 10px 0 #353535;
-	}
-	</style>
+	<link rel="stylesheet" type="text/css" href="custom_css/applicants.css">
 </head>
 <body>
-	<?php include ('sidenavhtml.php'); ?>
+	<?php include('sidenavhtml.php'); ?>
 	<div id="main">
 		<div class="row" style="z-index:1; margin-top:-20px;" id="topDiv">
 			<nav  class="navbar navbar-inverse" >
@@ -47,34 +36,55 @@
 			</nav>
 		</div>
 		<div class="container">
-			<div id="x" class="table-responsive">
-				<table id="applicants" class="table table-condensed table-hover">
-					<thead>
-						<tr>
-							<th style="text-align:left!important">Name</th>
-							<th style="text-align:left!important">Position</th>
-							<th style="text-align:left!important">Email</th>
-						</tr>
-					</thead>
-					<tbody style="text-align:left!important">
-						<?php
-							while($row = $result->fetch_assoc()){
-								echo '<tr>';
-								echo '<td>'.$row['NAME'].'</td>';
-								echo '<td>'.$row['POSITION'].'</td>';
-								echo '<td>'.$row['EMAIL ADDRESS'].'</td>';
-								echo '</tr>';
-							}
-						?>
-					</tbody>
-				</table>
-				<center>
-					<span>Total: <?php echo $count; ?> applicants</span>
-				</center>
+			<form id="search-form"> 
+				<input type="text" id="search" placeholder="Search" required />
+				<div id="search-icon"></div>
+			</form>
+			<div class="table-responsive">
+				<div id="result"></div>
+				<div id="initial-table">
+					<table id="applicants" class="table table-condensed table-hover">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Position</th>
+								<th>Email</th>
+							</tr>
+						</thead>
+						<tbody id="result">
+							<?php
+								while($row = $result->fetch_assoc()) {
+									echo '<tr class="applicant-data" data-toggle="modal" data-target="#applicant-info" data-id="'.$row['ID'].'">';
+									echo '<td>'.$row['NAME'].'</td>';
+									echo '<td>'.$row['POSITION'].'</td>';
+									echo '<td>'.$row['EMAIL ADDRESS'].'</td>';
+									echo '</tr>';
+								}
+							?>
+						</tbody>
+					</table>
+					<center>
+						<span>Total: <?php echo $count.' '.$label; ?></span>
+					</center>
+				</div>
 			</div>
 			<div style="position:fixed;bottom:25px;right:25px">
 				<a class="getCSV">Save as CSV</a>
-				<a class="getExcel" onclick="window.open('data:application/vnd.ms-excel,' + document.getElementById('x').outerHTML.replace(/ /g, '%20'));">Save as Excel</a>
+				<a class="getExcel" onclick="window.open('data:application/vnd.ms-excel,' + document.getElementById('applicants').outerHTML.replace(/ /g, '%20'));">Save as Excel</a>
+			</div>
+		</div>
+	</div>
+	<div id="applicant-info" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Applicant Information</h4>
+				</div>
+				<div id="modal-info"></div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -87,15 +97,73 @@
 		});
 	</script>
 	<script type="text/javascript">
+		$('input').on('keypress', function(e) {
+			return e.which !== 13;
+		});
+	</script>
+	<script type="text/javascript">
 		function openNav() {
 			document.getElementById("mySidenav").style.width = "300px";
 			document.getElementById("main").style.marginLeft = "300px";
 		}
-		
 		function closeNav() {
 			document.getElementById("mySidenav").style.width = "0";
 			document.getElementById("main").style.marginLeft= "0";
 		}
+	</script>
+	<script type="text/javascript">
+		$('#search-icon').click(function(){
+			$('#search').focus();
+			$('#search').css('width','50%');
+			$('#search').css('opacity','1');
+		});
+		$('#search').focusout(function(){
+			$('#search').css('width','0');
+			$('#search').css('opacity','0');
+		});
+	</script>
+	<script type="text/javascript">
+		function fill(Value) {
+		  	$('#search').val(Value);
+			$('#result').hide();
+		}
+		$(document).ready(function() {
+		  	$("#search").keyup(function() {
+		       	var name = $('#search').val();
+		       	if (name == "") {
+					$("#initial-table").show();
+		            $("#result").html("");
+		     	}
+		     	else {
+		           	$.ajax({
+		               type: "POST",
+		               url: "http://localhost/HROnline/search.php",
+		               data: {
+		                   search: name
+		               },
+		               success: function(html) {
+						   $("#initial-table").hide();
+		                   $("#result").html(html).show();
+		               }
+		           });
+		       }
+		   });
+		});
+	</script>
+	<script type="text/javascript">
+		$('.applicant-data').click(function(e) {
+			var applid = $(this).attr("data-id");
+           	$.ajax({
+               type: "POST",
+               url: "http://localhost/HROnline/applicant-data.php",
+               data: {
+                   aid: applid
+               },
+               success: function(html) {
+                   $("#modal-info").html(html).show();
+               }
+           });
+		});
 	</script>
 </body>
 </html>

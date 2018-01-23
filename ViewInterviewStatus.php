@@ -170,10 +170,36 @@ background: none;
 					</li>
 					<!--START-->
 					<li>
-						<a href="InterViewStatus.php"><h4 style = 'color:gray; font-family:"Trebuchet MS", Helvetica, sans-serif; padding-top:5px;'>View Interview Status</h4></a>
+						<?php
+						$id = isset($_GET['id']) ? $_GET['id'] : ' ';
+						echo'
+						<style>
+						h4{
+							color:gray;
+							font-family:Trebuchet MS;
+							Helvetica;
+							sans-serif; 
+							padding-top:5px;
+						}
+						</style>
+						<a href="ViewInterviewStatus.php?id='.$id.'"><h4>View Interview Status</h4></a>';
+						?>
 					</li>
 					<li>
-						<a href="vis.php"><h4 style = 'color:gray; font-family:"Trebuchet MS", Helvetica, sans-serif; padding-top:5px;'>Exam Results</h4></a>
+						<?php
+						$id = isset($_GET['id']) ? $_GET['id'] : ' ';
+						echo'
+						<style>
+						h4{
+							color:gray;
+							font-family:Trebuchet MS;
+							Helvetica;
+							sans-serif; 
+							padding-top:5px;
+						}
+						</style>
+						<a href="vis.php?id='.$id.'"><h4>Exam Results</h4></a>';
+						?>
 					</li>
 					<!--END-->
 				</ul>

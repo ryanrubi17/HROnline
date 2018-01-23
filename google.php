@@ -170,7 +170,8 @@ background: none;
 
 	<?php  
 
-	$id = $_GET['id'];
+	$id = isset($_GET['id']) ? $_GET['id'] : ' ';
+
 		echo '
 	<style>
 		h5 {
@@ -217,18 +218,18 @@ background: none;
 	<a class="navi" style="text-align: left;" href="reports.php?id='.$id.'"><h5>Reports</h5></a>
 	<a class="navi" style="text-align: left;" href="addNewPosition.php?id='.$id.'"><h5>Add Position</h5></a>
 	<a class="navi" style="text-align: left;" href="createAccount.php?id='.$id.'"><h5>Create User Accounts</h5></a>
-	<a class="navi" style="text-align: left;" href="user_logs.php?id='.$id.'"><h5>User History Logs</h5></a>';
+	<a class="navi" style="text-align: left;" href="user_logs.php?id='.$id.'"><h5>User History Logs</h5></a>
+	<a class="navi" style="text-align: left;" href="about.php?id='.$id.'"> About Us</a>';
    if($_SESSION['id'] == 1){
 	  echo '
-	  <a class="navi" href="about.php?id='.$id.'" style="font-size: 1em; margin-bottom:1em;"> About Us</a>
-	 
+	  
 	  <a class="navi" style="text-align: left;" href="adminloginpage.php"><h5>Log out</h5></a>
 		
 	  </div>';
    }else{
 	   //if($_SESSION['neco'] == 3){
 		   echo '<a class="navi" id = "accountAnchor" style="text-align: left;" href="account.php?id='.$id.'"><h5>Account</h5></a>
-		   <a class="navi" href="about.php"><h5> About Us </h5></a>
+		   
 				<a class="navi" style="text-align: left;" href="adminloginpage.php"><h5>Log out</h5></a>
 				 </div> ';
 	//}
@@ -353,27 +354,27 @@ background: none;
 
 							  <ul class="dropdown-menu">
 
-								<li><a href="google.php?show=''">All (<?php echo $row['total'] ?>)</a></li>
+								<li><a href="google.php?show=''id=<?php echo $id;?>">All (<?php echo $row['total'] ?>)</a></li>
 
-								<li><a href="google.php?show=Pending">Pending (<?php echo $row['Pending'] ?>)</a></li>
+								<li><a href="google.php?show=Pending&id=<?php echo $id;?>">Pending (<?php echo $row['Pending'] ?>)</a></li>
 
-								<li><a href="google.php?show=Initial Interview">Initial Interview (<?php echo $row['Initial Interview'] ?>)</a></li>
+								<li><a href="google.php?show=Initial Interview&id=<?php echo $id;?>">Initial Interview (<?php echo $row['Initial Interview'] ?>)</a></li>
 
-								<li><a href="google.php?show=Second Interview">Second Interview (<?php echo $row['Second Interview'] ?>)</a></li>
+								<li><a href="google.php?show=Second Interview&id=<?php echo $id;?>">Second Interview (<?php echo $row['Second Interview'] ?>)</a></li>
 
-								<li><a href="google.php?show=Third Interview">Third Interview (<?php echo $row['Third Interview'] ?>)</a></li>
+								<li><a href="google.php?show=Third Interview&id=<?php echo $id;?>">Third Interview (<?php echo $row['Third Interview'] ?>)</a></li>
 
-								<li><a href="google.php?show=Final Interview">Final Interview (<?php echo $row['Final Interview'] ?>)</a></li>
+								<li><a href="google.php?show=Final Interview&id=<?php echo $id;?>">Final Interview (<?php echo $row['Final Interview'] ?>)</a></li>
 
-								<li><a href="google.php?show=Hired">Hired(<?php echo $row['Hired'] ?>)</a></li>
+								<li><a href="google.php?show=Hired&id=<?php echo $id;?>">Hired(<?php echo $row['Hired'] ?>)</a></li>
 
 								<!--<li><a href="google.php?show=Fail">Fail (<?php echo $row['Fail'] ?>)</a></li>-->
 
-								<li><a href="google.php?show=No Show">No Show (<?php echo $row['No Show'] ?>)</a></li>
+								<li><a href="google.php?show=No Show&id=<?php echo $id;?>">No Show (<?php echo $row['No Show'] ?>)</a></li>
 
-								<li><a href="google.php?show=Rejected">Rejected (<?php echo $row['Rejected'] ?>)</a></li>
+								<li><a href="google.php?show=Rejected&id=<?php echo $id;?>">Rejected (<?php echo $row['Rejected'] ?>)</a></li>
 
-								<li><a href="google.php?show=Archived">Archived (<?php echo $row['Archived'] ?>)</a></li>
+								<li><a href="google.php?show=Archived&id=<?php echo $id;?>">Archived (<?php echo $row['Archived'] ?>)</a></li>
 
 							  </ul>
 
@@ -412,14 +413,37 @@ background: none;
 					<!--START-->
 
 					<li>
-
-						<a href="ViewInterviewStatus.php"><h4 style = 'color:gray; font-family:"Trebuchet MS", Helvetica, sans-serif; padding-top:5px;'>View Interview Status</h4></a>
-
+					    <?php
+						$id = isset($_GET['id']) ? $_GET['id'] : ' ';
+						echo'
+						<style>
+						h4{
+							color:gray;
+							font-family:Trebuchet MS;
+							Helvetica;
+							sans-serif; 
+							padding-top:5px;
+						}
+						</style>
+						<a href="ViewInterviewStatus.php?id='.$id.'"><h4>View Interview Status</h4></a>';
+						?>
 					</li>
 
 					<li>
-
-						<a href="vis.php"><h4 style = 'color:gray; font-family:"Trebuchet MS", Helvetica, sans-serif; padding-top:5px;'>Exam Results</h4></a>
+                        <?php
+						$id = isset($_GET['id']) ? $_GET['id'] : ' ';
+						echo'
+						<style>
+						h4{
+							color:gray;
+							font-family:Trebuchet MS;
+							Helvetica;
+							sans-serif; 
+							padding-top:5px;
+						}
+						</style>
+						<a href="vis.php?id='.$id.'"><h4>Exam Results</h4></a>';
+						?>
 
 					</li>
 

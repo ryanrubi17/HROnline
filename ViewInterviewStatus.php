@@ -152,6 +152,8 @@ background: none;
 								<li><a href="google.php?show=Rejected">Rejected (<?php echo $row['Rejected'] ?>)</a></li>
 								<li><a href="google.php?show=Archived">Archived (<?php echo $row['Archived'] ?>)</a></li>
 							  </ul>
+							  
+							  
 				  </li>
 					<li class="dropdown"><a data-toggle="dropdown" href="#"><h4 style = 'color:gray; font-family:"Trebuchet MS", Helvetica, sans-serif; padding-top:5px;'>Show/Hide Column</h4> </span></a>
 						<ul class="dropdown-menu">

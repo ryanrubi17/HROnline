@@ -140,17 +140,17 @@ background: none;
 				  </li>
 				  <li class="dropdown" ><a data-toggle="dropdown" href="#" ><h4 style ="color:gray; font-family:'Trebuchet MS', Helvetica, sans-serif; padding-top:5px;">Application Status</h4> </span></a>
 							  <ul class="dropdown-menu">
-								<li><a href="google.php?show=''">All (<?php echo $row['total'] ?>)</a></li>
-								<li><a href="google.php?show=Pending">Pending (<?php echo $row['Pending'] ?>)</a></li>
-								<li><a href="google.php?show=Initial Interview">Initial Interview (<?php echo $row['Initial Interview'] ?>)</a></li>
-								<li><a href="google.php?show=Second Interview">Second Interview (<?php echo $row['Second Interview'] ?>)</a></li>
-								<li><a href="google.php?show=Third Interview">Third Interview (<?php echo $row['Third Interview'] ?>)</a></li>
-								<li><a href="google.php?show=Final Interview">Final Interview (<?php echo $row['Final Interview'] ?>)</a></li>
-								<li><a href="google.php?show=Hired">Hired(<?php echo $row['Hired'] ?>)</a></li>
+								<li><a href="google.php?show=''&id=<?php echo $id;?>">All (<?php echo $row['total'] ?>)</a></li>
+								<li><a href="google.php?show=Pending&id=<?php echo $id;?>">Pending (<?php echo $row['Pending'] ?>)</a></li>
+								<li><a href="google.php?show=Initial Interview&id=<?php echo $id;?>">Initial Interview (<?php echo $row['Initial Interview'] ?>)</a></li>
+								<li><a href="google.php?show=Second Interview&id=<?php echo $id;?>">Second Interview (<?php echo $row['Second Interview'] ?>)</a></li>
+								<li><a href="google.php?show=Third Interview&id=<?php echo $id;?>">Third Interview (<?php echo $row['Third Interview'] ?>)</a></li>
+								<li><a href="google.php?show=Final Interview&id=<?php echo $id;?>">Final Interview (<?php echo $row['Final Interview'] ?>)</a></li>
+								<li><a href="google.php?show=Hired&id=<?php echo $id;?>">Hired(<?php echo $row['Hired'] ?>)</a></li>
 								<!--<li><a href="google.php?show=Fail">Fail (<?php echo $row['Fail'] ?>)</a></li>-->
-								<li><a href="google.php?show=No Show">No Show (<?php echo $row['No Show'] ?>)</a></li>
-								<li><a href="google.php?show=Rejected">Rejected (<?php echo $row['Rejected'] ?>)</a></li>
-								<li><a href="google.php?show=Archived">Archived (<?php echo $row['Archived'] ?>)</a></li>
+								<li><a href="google.php?show=No Show&id=<?php echo $id;?>">No Show (<?php echo $row['No Show'] ?>)</a></li>
+								<li><a href="google.php?show=Rejected&id=<?php echo $id;?>">Rejected (<?php echo $row['Rejected'] ?>)</a></li>
+								<li><a href="google.php?show=Archived&id=<?php echo $id;?>">Archived (<?php echo $row['Archived'] ?>)</a></li>
 							  </ul>
 							  
 							  

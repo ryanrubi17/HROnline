@@ -41,7 +41,10 @@ class PDF extends FPDF{
 		
 		$pdf = new PDF();
 		$pdf->AddPage();
+
 		$pdf->SetFont('Arial','B',15);
+		$pdf->SetTitle('Application Form');
+		
 		$pdf->Cell(10,10,'Application Form',0,1);
 		$pdf->Cell(59, 5, '',0,1);//end of line
 		
@@ -76,13 +79,15 @@ class PDF extends FPDF{
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(10, 5, $data['EMPLOYMENT_DATE'],0,1);
 	$pdf->Cell(59, 5, '',0,1);//end of line
-	//expected salary
+	
 	
 	//work on holidays/weekends
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(73, 5, 'Are you willing to work on weekends/holiday? ',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(21, 5, $data['WEEKENDS_HOLIDAYS'],0,0);//end of line
+
+	//expected salary
 	$pdf->SetFont('Arial','I',11);
 	$pdf->Cell(30, 5, 'Expected Salary:',0,0);
 	$pdf->SetFont('Arial','',10);
@@ -90,7 +95,6 @@ class PDF extends FPDF{
 	$pdf->Cell(59, 5, '',0,1);//end of line
 	
 	//personal information
-	
 	$pdf->Cell(59, 5, '',0,1);
 	$pdf->SetFont('Arial','I',12);
 	$pdf->Cell(10, 5, 'Personal Information',0,1,"L");//END OF LINE
@@ -106,45 +110,45 @@ class PDF extends FPDF{
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(10, 5, $data['CIVIL STATUS'],0,1);
 	$pdf->Cell(59, 5, '',0,1);//end of line
-	//nickname
+	//BIRTHDAY
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(20, 5, 'Birth Date:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(65, 5, $data['DATE OF BIRTH'],0,0);//end of line
-	//status
+	//AGE
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(30, 5, 'Age:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(10, 5, $data['AGE'],0,1);
 	$pdf->Cell(59, 5, '',0,1);//end of line
-	//nickname
+	//PLACE OF BIRTH
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(25, 5, 'Place of Birth:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(60, 5, $data['PLACE OF BIRTH'],0,0);//end of line
-	//status
+	//GENDER
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(30, 5, 'Gender:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(10, 5, $data['GENDER'],0,1);
 	$pdf->Cell(59, 5, '',0,1);//end of line
-	//nickname
+	//BLOOD TYPE
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(25, 5, 'Blood Type:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(60, 5, $data['BLOODTYPE'],0,0);//end of line
-	//status
+	//RELIGION
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(30, 5, 'Religion:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(10, 5, $data['RELIGION'],0,1);
 	$pdf->Cell(59, 5, '',0,1);//end of line
-	//nickname
+	//HEIGHT
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(25, 5, 'Height:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(60, 5, $data['HEIGHT'],0,0);//end of line
-	//status
+	//WEIGHT
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(30, 5, 'Weight:',0,0);
 	$pdf->SetFont('Arial','',10);
@@ -229,19 +233,18 @@ class PDF extends FPDF{
 	$pdf->Cell(59, 5, '',0,1);//end of line
 	
 	//FAMILY BACKGROUND
-	
 	$pdf->Cell(59, 5, '',0,1);
 	$pdf->SetFont('Arial','I',12);
 	$pdf->Cell(10, 5, 'Family Background',0,1,"L");//END OF LINE
 	$pdf->Cell(59, 5, '',0,1);
 	
 	if ((!empty($data['SPOUSE\'S NAME']))){
-	
+	//SPOUSE'S NAME
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(25, 5, 'Spouse Name:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(60, 5, $data['SPOUSE\'S NAME'],0,0);//end of line
-	//CONTACT PERSON'S NUMBER
+	//SPOUSE'S OCCUPATION
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(30, 5, 'Occupation:',0,0);
 	$pdf->SetFont('Arial','',10);
@@ -251,39 +254,41 @@ class PDF extends FPDF{
 		$pdf->Cell(59, 5, '',0,1);//end of line;
 	}
 	
-	//CONTACT PERSON
+	//FATHER'S NAME
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(30, 5, "Father's Name:",0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(60, 5, $data['FATHER\'S NAME'],0,1);//end of line
 	$pdf->Cell(59, 5, '',0,1);
-	//CONTACT PERSON'S NUMBER
+	//FATHER'S PLACE OF BIRTH
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(30, 5, 'Place of Birth:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(10, 5, $data['FATHER PLACEBIRTH'],0,1);
 	$pdf->Cell(59, 5, '',0,1);//end of line
+	//MOTHER'S NAME
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(30, 5, "Mother's Name:",0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(60, 5, $data['MOTHER\'S MAIDEN NAME'],0,1);//end of line
 	$pdf->Cell(59, 5, '',0,1);
-	//CONTACT PERSON'S NUMBER
+	//MOTHER'S PLACE OF BIRTH
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(30, 5, 'Place of Birth:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(10, 5, $data['MOTHER PLACEBIRTH'],0,1);
 	$pdf->Cell(59, 5, '',0,1);//end of line
 	
+	//SIBLINGS
 	$selectSiblings = mysqli_query($conn, "Select * from tbl_siblings where `ID` = '$id'");
 	while($siblings=mysqli_fetch_array($selectSiblings)){
 	if (!empty($siblings['SIBLING_NAME'])) {
-			 //nickname
+			 //SIBLING'S NAME
 			echo	$pdf->SetFont('Arial','I',10);
 			echo	$pdf->Cell(30, 5, "Sibling's Name:",0,0);
 			echo	$pdf->SetFont('Arial','',10);
 			echo	$pdf->Cell(65, 5, $siblings['SIBLING_NAME'],0,0);//end of line
-				//status
+				//SIBLING'S AGE
 			echo	$pdf->SetFont('Arial','I',10);
 			echo	$pdf->Cell(30, 5, 'Age:',0,0);
 			echo	$pdf->SetFont('Arial','',10);
@@ -293,15 +298,16 @@ class PDF extends FPDF{
 			echo	$pdf->Cell(59, 5, '',0,1);//end of line;
 		}
 	}
+	//DEPENDENTS
 	$selectChild = mysqli_query($conn, "Select * from tbl_child where `ID` = '$id'");
 	while($child=mysqli_fetch_array($selectChild)){
 	if (!empty($child['CHILD_NAME'])) {
-			 //nickname
+			 //DEPENDENT'S NAME
 			echo	$pdf->SetFont('Arial','I',10);
-			echo	$pdf->Cell(30, 5, "Sibling's Name:",0,0);
+			echo	$pdf->Cell(35, 5, "Dependent's Name:",0,0);
 			echo	$pdf->SetFont('Arial','',10);
 			echo	$pdf->Cell(65, 5, $child['CHILD_NAME'],0,0);//end of line
-				//status
+				//DEPENDENT'S AGE
 			echo	$pdf->SetFont('Arial','I',10);
 			echo	$pdf->Cell(30, 5, 'Age:',0,0);
 			echo	$pdf->SetFont('Arial','',10);
@@ -310,7 +316,7 @@ class PDF extends FPDF{
 		}else{
 			echo	$pdf->Cell(59, 5, '',0,1);//end of line;
 		}
-		$dependentCounter++;
+		
 	}
 	
 	//EDUCATIONAL BACKGROUND
@@ -342,11 +348,12 @@ class PDF extends FPDF{
 		else{
 			$ElemDates = "";
 		}
+		//FROM
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(10, 5, 'From:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(30, 5, $explodeElemDates[0],0,0);//end of line
-	//CONTACT PERSON'S NUMBER
+	//TO
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(10, 5, 'To:',0,0);
 	$pdf->SetFont('Arial','',10);
@@ -375,17 +382,18 @@ class PDF extends FPDF{
 		else{
 			$HSDates = "";
 		}
+		//FROM
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(10, 5, 'From:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(30, 5, $explodeHSDates[0],0,0);//end of line
-	//CONTACT PERSON'S NUMBER
+	//TO
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(10, 5, 'To:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(10, 5, $HSDates,0,1);
 	$pdf->Cell(59, 5, '',0,1);//end of line
-	//HIGH School NAME
+	//COLLEGE School NAME
 	$pdf->SetFont('Arial','I',12);
 	$pdf->Cell(10, 5, 'Tertiary',0,1,"L");//END OF LINE
 	$pdf->Cell(59, 5, '',0,1);
@@ -413,17 +421,20 @@ class PDF extends FPDF{
 		else{
 			$ColDates = "";
 		}
+		//FROM
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(10, 5, 'From:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(30, 5, $explodeColDates[0],0,0);//end of line
-	//CONTACT PERSON'S NUMBER
+	//TO
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(10, 5, 'To:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(10, 5, $ColDates,0,1);
 	$pdf->Cell(59, 5, '',0,1);//end of line
 	
+
+	//GRADUATE SCHOOL
 	if (!empty($data['GRAD_Name of school'])){
 		
 		echo	$pdf->Cell(35, 5, 'Name of School:',0,0);
@@ -448,11 +459,12 @@ class PDF extends FPDF{
 		else{
 			$GradDates = "";
 		}
+		//FROM
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(10, 5, 'From:',0,0);
 	$pdf->SetFont('Arial','',10);
 	$pdf->Cell(30, 5, $explodeGradDates[0],0,0);//end of line
-	//CONTACT PERSON'S NUMBER
+	//TO
 	$pdf->SetFont('Arial','I',10);
 	$pdf->Cell(10, 5, 'To:',0,0);
 	$pdf->SetFont('Arial','',10);
@@ -467,7 +479,6 @@ class PDF extends FPDF{
 	$pdf->Cell(10, 5, 'Work Experience',0,1,"L");//END OF LINE
 	$counter = 1;
 	while($counter < 6){
-		
 			if(!empty($data[$counter.'. Inclusive Dates'])){
 			$explodeSupervisor = explode("/", $data[$counter.'.3 Name_Position and Contact No. of Immediate Supervisor']);
 			$explodeDates = explode("-", $data[$counter.'. Inclusive Dates']);
@@ -499,7 +510,7 @@ class PDF extends FPDF{
 				$pdf->Cell(10, 5, 'From:',0,0);
 				$pdf->SetFont('Arial','',10);
 				$pdf->Cell(30, 5, $explodeDates[0],0,0);//end of line
-				//CONTACT PERSON'S NUMBER
+				
 				$pdf->SetFont('Arial','I',10);
 				$pdf->Cell(10, 5, 'To:',0,0);
 				$pdf->SetFont('Arial','',10);
@@ -616,116 +627,8 @@ class PDF extends FPDF{
 				}
 			$referenceCounter++;
 			}
-	//INTERVIEWER COMMENT
-	$pdf->Cell(59, 5, '',0,1);
-	$pdf->SetFont('Arial','I',12);
-	$pdf->Cell(10, 5, 'Interviewer Comment',0,1,"L");//END OF LINE
-	$pdf->Cell(59, 5, '',0,1);
-
-	$commentsql =
-"
-
-		SELECT tbl_interview.Comment, tbl_interview.interviewerFirstname, tbl_interview.interviewerLastname, tbl_interview.interviewerMiddlename, tbl_application.REFERENCE_NO, tbl_application.id
-
-		FROM tbl_interview, tbl_application
-
-		WHERE tbl_interview.InterviewStage = 'Initial Interview' AND tbl_application.id = '$id' AND tbl_interview.ReferenceNo = tbl_application.REFERENCE_NO";
-
-
-
-		$result = $conn->query($commentsql);
-
-		$row = $result->fetch_assoc();
-
-		echo 
-		$pdf->SetFont('Arial','I',10);
-		$pdf->Cell(30, 5, "Initial Interviewer:",0,0);
-		$pdf->SetFont('Arial','',10);
-		$pdf->Cell(60, 5, $row["interviewerLastname"].", ".$row["interviewerFirstname"]." ".$row["interviewerMiddlename"],0,1);//end of line
-		$pdf->Cell(59, 5, '',0,1);
-		//CONTACT PERSON'S NUMBER
-		$pdf->SetFont('Arial','I',10);
-		$pdf->MultiCell(175, 5, nl2br($row['Comment']),0,0);
-		$pdf->Cell(59, 5, '',0,1);
-	$commentsql2 = "
-
-		SELECT tbl_interview.Comment, tbl_interview.interviewerFirstname, tbl_interview.interviewerLastname, tbl_interview.interviewerMiddlename, tbl_application.REFERENCE_NO, tbl_application.id
-
-		FROM tbl_interview, tbl_application
-
-		WHERE tbl_interview.InterviewStage = 'Second Interview' AND tbl_application.id = '$id' AND tbl_interview.ReferenceNo = tbl_application.REFERENCE_NO";
-
-
-
-		$result = $conn->query($commentsql2);
-
-		$row = $result->fetch_assoc();
-
-		echo
-			$pdf->SetFont('Arial','I',10);
-			$pdf->Cell(30, 5, "Second Interviewer:",0,0);
-			$pdf->SetFont('Arial','',10);
-			$pdf->Cell(60, 5, $row["interviewerLastname"].", ".$row["interviewerFirstname"]." ".$row["interviewerMiddlename"],0,1);//end of line
-			$pdf->Cell(59, 5, '',0,1);
-			//CONTACT PERSON'S NUMBER
-			$pdf->SetFont('Arial','I',10);
-			$pdf->MultiCell(175, 5, nl2br($row['Comment']),0,0);
-			$pdf->Cell(59, 5, '',0,1);
-		
-
-
-
-	$commentsql3 = "
-
-		SELECT tbl_interview.Comment, tbl_interview.interviewerFirstname, tbl_interview.interviewerLastname, tbl_interview.interviewerMiddlename, tbl_application.REFERENCE_NO, tbl_application.id
-
-		FROM tbl_interview, tbl_application
-
-		WHERE tbl_interview.InterviewStage = 'Third Interview' AND tbl_application.id = '$id' AND tbl_interview.ReferenceNo = tbl_application.REFERENCE_NO";
-
-
-
-		$result = $conn->query($commentsql3);
-
-		$row = $result->fetch_assoc();
-
-		echo
-			$pdf->SetFont('Arial','I',10);
-			$pdf->Cell(30, 5, "Third Interviewer:",0,0);
-			$pdf->SetFont('Arial','',10);
-			$pdf->Cell(60, 5, $row["interviewerLastname"].", ".$row["interviewerFirstname"]." ".$row["interviewerMiddlename"],0,1);//end of line
-			$pdf->Cell(59, 5, '',0,1);
-			//CONTACT PERSON'S NUMBER
-			$pdf->SetFont('Arial','I',10);
-			$pdf->MultiCell(175, 5, nl2br($row['Comment']),0,0);
-			$pdf->Cell(59, 5, '',0,1);
-
-
-
-	$commentsql4 = "
-
-		SELECT tbl_interview.Comment, tbl_interview.interviewerFirstname, tbl_interview.interviewerLastname, tbl_interview.interviewerMiddlename, tbl_application.REFERENCE_NO, tbl_application.id
-
-		FROM tbl_interview, tbl_application
-
-		WHERE tbl_interview.InterviewStage = 'Final Interview' AND tbl_application.id = '$id' AND tbl_interview.ReferenceNo = tbl_application.REFERENCE_NO";
-
-
-
-		$result = $conn->query($commentsql4);
-
-		$row = $result->fetch_assoc();
-
-		echo
-			$pdf->SetFont('Arial','I',10);
-			$pdf->Cell(30, 5, "Final Interviewer:",0,0);
-			$pdf->SetFont('Arial','',10);
-			$pdf->Cell(60, 5, $row["interviewerLastname"].", ".$row["interviewerFirstname"]." ".$row["interviewerMiddlename"],0,1);//end of line
-			$pdf->Cell(59, 5, '',0,1);
-			//CONTACT PERSON'S NUMBER
-			$pdf->SetFont('Arial','I',10);
-			$pdf->MultiCell(175, 5, nl2br($row['Comment']),0,0);
-			$pdf->Cell(59, 5, '',0,1);
+	
+	
 			
 	//ESSAY PART
 	$pdf->Cell(59, 5, '',0,1);
@@ -804,7 +707,121 @@ class PDF extends FPDF{
 								}
 
 							}
-						}			
+						}
+
+	//INTERVIEWER COMMENT
+	$pdf->Cell(59, 5, '',0,1);
+	$pdf->SetFont('Arial','I',12);
+	$pdf->Cell(10, 5, 'Interviewer Comment',0,1,"L");//END OF LINE
+	$pdf->Cell(59, 5, '',0,1);
+
+	$commentsql =
+"
+
+		SELECT tbl_interview.Comment, tbl_interview.interviewerFirstname, tbl_interview.interviewerLastname, tbl_interview.interviewerMiddlename, tbl_application.REFERENCE_NO, tbl_application.id
+
+		FROM tbl_interview, tbl_application
+
+		WHERE tbl_interview.InterviewStage = 'Initial Interview' AND tbl_application.id = '$id' AND tbl_interview.ReferenceNo = tbl_application.REFERENCE_NO";
+
+
+
+		$result = $conn->query($commentsql);
+
+		$row = $result->fetch_assoc();
+
+		echo 
+		$pdf->SetFont('Arial','I',10);
+		$pdf->Cell(45, 5, "Initial Interviewer:",0,0);
+		$pdf->SetFont('Arial','',10);
+		$pdf->Cell(60, 5, $row["interviewerLastname"].", ".$row["interviewerFirstname"]." ".$row["interviewerMiddlename"],0,1);//end of line
+		$pdf->Cell(59, 5, '',0,1);
+		//CONTACT PERSON'S NUMBER
+		$pdf->SetFont('Arial','I',10);
+		$pdf->Cell(35, 5, "Comments:",0,0);
+		$pdf->SetFont('Arial','',10);
+		$pdf->MultiCell(150, 5, ($row['Comment']),0,1);
+		
+		$pdf->Cell(59, 5, '',0,1);
+	$commentsql2 = "
+
+		SELECT tbl_interview.Comment, tbl_interview.interviewerFirstname, tbl_interview.interviewerLastname, tbl_interview.interviewerMiddlename, tbl_application.REFERENCE_NO, tbl_application.id
+
+		FROM tbl_interview, tbl_application
+
+		WHERE tbl_interview.InterviewStage = 'Second Interview' AND tbl_application.id = '$id' AND tbl_interview.ReferenceNo = tbl_application.REFERENCE_NO";
+
+
+
+		$result = $conn->query($commentsql2);
+
+		$row = $result->fetch_assoc();
+
+		echo
+			$pdf->SetFont('Arial','I',10);
+			$pdf->Cell(45, 5, "Second Interviewer:",0,0);
+			$pdf->SetFont('Arial','',10);
+			$pdf->Cell(60, 5, $row["interviewerLastname"].", ".$row["interviewerFirstname"]." ".$row["interviewerMiddlename"],0,1);//end of line
+			$pdf->Cell(59, 5, '',0,1);
+			$pdf->SetFont('Arial','I',10);
+			$pdf->Cell(35, 5, "Comments:",0,0);
+			$pdf->SetFont('Arial','',10);
+			$pdf->MultiCell(150, 5, ($row['Comment']),0,0);
+			$pdf->Cell(59, 5, '',0,1);
+			$pdf->Cell(59, 5, '',0,1);
+
+	$commentsql3 = "
+
+		SELECT tbl_interview.Comment, tbl_interview.interviewerFirstname, tbl_interview.interviewerLastname, tbl_interview.interviewerMiddlename, tbl_application.REFERENCE_NO, tbl_application.id
+
+		FROM tbl_interview, tbl_application
+
+		WHERE tbl_interview.InterviewStage = 'Third Interview' AND tbl_application.id = '$id' AND tbl_interview.ReferenceNo = tbl_application.REFERENCE_NO";
+
+
+
+		$result = $conn->query($commentsql3);
+
+		$row = $result->fetch_assoc();
+
+		echo
+			$pdf->SetFont('Arial','I',10);
+			$pdf->Cell(45, 5, "Third Interviewer:",0,0);
+			$pdf->SetFont('Arial','',10);
+			$pdf->Cell(60, 5, $row["interviewerLastname"].", ".$row["interviewerFirstname"]." ".$row["interviewerMiddlename"],0,1);//end of line
+			$pdf->Cell(59, 5, '',0,1);
+			
+			$pdf->SetFont('Arial','I',10);
+			$pdf->Cell(35, 5, "Comments:",0,0);
+			$pdf->SetFont('Arial','',10);
+			$pdf->MultiCell(150, 5, ($row['Comment']),0,0);
+			$pdf->Cell(59, 5, '',0,1);
+			$pdf->Cell(59, 5, '',0,1);
+	$commentsql4 = "
+
+		SELECT tbl_interview.Comment, tbl_interview.interviewerFirstname, tbl_interview.interviewerLastname, tbl_interview.interviewerMiddlename, tbl_application.REFERENCE_NO, tbl_application.id
+
+		FROM tbl_interview, tbl_application
+
+		WHERE tbl_interview.InterviewStage = 'Final Interview' AND tbl_application.id = '$id' AND tbl_interview.ReferenceNo = tbl_application.REFERENCE_NO";
+
+
+
+		$result = $conn->query($commentsql4);
+
+		$row = $result->fetch_assoc();
+
+		echo
+			$pdf->SetFont('Arial','I',10);
+			$pdf->Cell(45, 5, "Final Interviewer:",0 ,0);
+			$pdf->SetFont('Arial','',10);
+			$pdf->Cell(60, 5, $row["interviewerLastname"].", ".$row["interviewerFirstname"]." ".$row["interviewerMiddlename"],0,1);//end of line
+			$pdf->Cell(59, 5, '',0,1);
+			$pdf->SetFont('Arial','I',10);
+			$pdf->Cell(35, 5, "Comments:",0,0);
+			$pdf->SetFont('Arial','',10);
+			$pdf->MultiCell(150, 5, ($row['Comment']),0,0);
+			$pdf->Cell(59, 5, '',0,1);			
 		
 		$pdf->Output();
 		

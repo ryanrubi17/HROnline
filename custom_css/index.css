@@ -155,7 +155,8 @@
 
 	#btn_freshgrad,
 	#btn_experienced,
-	#btn_intern{
+	#btn_intern
+        {
 	  	display: inline-block;
 	  	vertical-align: top;
 	  	width:48%;

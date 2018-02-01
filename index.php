@@ -223,22 +223,81 @@ $(document).ready(function(){
 		
 
 		<div class="modal-body">
-
-			<h6>Choose Candidate Type:</h6>
+            <hr>
+			<center><h6 id="gago5">Choose Candidate Type:</h6></center>
 
 			<center>
 
-				<button type="button" id="btn_experienced" style="padding-bottom:2%;" class=" btn btn-default experienced"><p style="margin-bottom:0px;" id="exp_text"><i class="fa fa-briefcase" id="case_icon" aria-hidden="true"></i> &nbsp; Experienced Candidate</p></button>&nbsp; 
+				<button type="button" onclick="show()" id="btn_experienced" style="padding-bottom:2%;" class=" btn btn-default experienced"><p style="margin-bottom:0px;" id="exp_text"><i class="fa fa-briefcase" id="case_icon" aria-hidden="true"></i> &nbsp; Experienced Candidate</p></button>&nbsp; 
 
-				<button type="button" id="btn_freshgrad" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default fresh"><p style="margin-bottom:0px;" id="fresh_grad"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Fresh Graduate</p></button>
+				<button type="button" onclick="show()" id="btn_freshgrad" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default fresh"><p style="margin-bottom:0px;" id="fresh_grad"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp; Fresh Graduate</p></button>
 
-				<button type="button" id="btn_intern" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default interns"><p style="margin-bottom:0px;" id="intern_ship"><i class="fa fa-id-badge" aria-hidden="true"></i> &nbsp; Intern</p></button>
+				<button type="button" onclick="show()" id="btn_intern" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default interns"><p style="margin-bottom:0px;" id="intern_ship"><i class="fa fa-id-badge" aria-hidden="true"></i> &nbsp; Intern</p></button>
+             
+				<h4 id="gago2">Authorization Letter</h4><br>
+				<p id="gago">I have read the Privacy Policy and hereby authorize and give my consent for Anderson Group BPO, Inc. to collect, record, 
+				   organize,update or modify, retrieve, consult, use, consolidate, block, erase or destruct my personal data as part of my information.
+				   I hereby affirm my right to be informed, object to processing, access and rectify, suspend or withdraw my personal data,
+				   and be indemnified in case of damages pursuant to the provisions of the Republic Act No. 10173 of the Philippines, 
+				   Data Privacy Act of 2012 and Regulation (EU) 2016/679, General Data Protection Regulation, whichever is applicable, 
+				   and its corresponding implementing rules and regulations.</p>
+				   
+				<button type="button" class="btn btn-primary pull-center" data-dismiss="modal" id="IUnderstand">I Understand</button>
+				  
+				 <style>
+				 #gago2
+				 {
+					 display: none;
+					 color: rgb(47, 84, 150);
+				 }
+				 #gago
+				 {
+					 display: none;
+				 }
+				 #IUnderstand
+				 {
+					  display: none;
+					  text-align: center;
 
-				
+				 }
+				 #okay_button
+				 {
+					 display: none;
+				 }
+				 #back_button
+				 {
+					 display: none;
+				 }
+				 </style>
+				 
+				 <script type="text/javascript">
+				 
+				 function show(){
+					 document.getElementById("gago").style.display ="block"; 
+					 document.getElementById("gago2").style.display ="block";
+					 document.getElementById("IUnderstand").style.display ="block";
+					 document.getElementById("gago3").style.display ="none";
+					 document.getElementById("gago4").style.display ="none";
+					 document.getElementById("ref_code").style.display ="none";
+					 document.getElementById("okay_button").style.display ="none";
+				 }
+				 
+				 function hclick()
+				 {
+					document.getElementById("btn_experienced").style.display ="none";
+					document.getElementById("btn_freshgrad").style.display ="none";
+					document.getElementById("btn_intern").style.display ="none";
+					document.getElementById("gago5").style.display ="none";
+					document.getElementById("gago3").style.display ="none";
+					document.getElementById("okay_button").style.display ="block";
+					
 
-				
-
-				<div class="strike" style="margin-bottom:3%;">
+				 }
+				 
+				 
+				 </script>
+                
+				<div class="strike" style="margin-bottom:3%;" id="gago3">
 
 					<span style="font-size:17px;"><b>OR</b></span>
 
@@ -250,12 +309,11 @@ $(document).ready(function(){
 
 			
 
-			<h6 title="Enter Your 10 digit Code for unfinished Application Form.">Use Reference Code:</h6>
+			<center><h6 id="gago4" title="Enter Your 10 digit Code for unfinished Application Form.">Use Reference Code:</h6></center>
 
 			<center>
 
-				<input type="text" style="width:70%;" title="Enter Your 10 digit Code for unfinished Application Form." maxlength="10" name="ref_code" class='form-control' id="ref_code"/>
-
+				<input type="text" onFocus="hclick()" style="width:70%;" title="Enter Your 10 digit Code for unfinished Application Form." maxlength="10" name="ref_code" class='form-control' id="ref_code"/>
 				<?php 
 
 				if(isset($_SESSION['refcode_not_found'])){
@@ -279,15 +337,12 @@ $(document).ready(function(){
 				}
 
 				?>
-
 			</center>
 
 		</div>
 
 		<div class="modal-footer">
-
-			<button type="button" class="btn btn-primary pull-right" data-dismiss="modal" id="okay_button">Okay</button>
-
+			<button type="button" class="btn btn-primary pull-right" data-dismiss="modal" id="okay_button" name="okay_button">Okay</button>
 		</div>
 
     </div>

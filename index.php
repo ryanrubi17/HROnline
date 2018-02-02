@@ -3602,6 +3602,25 @@ $(document).ready(function(){
         }); 
 
 	</script>	
+	
+	<script type="text/javascript">
+	
+		$("#btn_intern").click(function(){
+			$("button").removeClass("active");
+			$(this).addClass("active");
+			document.getElementById("app_stat").value = 'grad';
+			$('#employers_name1').attr('required', false);
+			$('#employers_address').attr('required', false);
+			$('#position-title').attr('required', false);
+			$('#reason').attr('required', false);
+			$('#monthlysalary').attr('required', false);
+			$("#employers_name1").blur();
+			$("#employers_address").blur();
+			$("#position-title").blur();
+			$("#reason").blur();
+		});
+	
+	</script>
 
 	<script type="text/javascript">
 

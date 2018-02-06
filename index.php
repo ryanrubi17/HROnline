@@ -632,6 +632,8 @@ $(document).ready(function(){
 
 										<option value="51,000.00 - 55,000.00">&#8369;51,000.00 - &#8369;55,000.00</option>
 
+										<option value="More than 55,000.00"> More than &#8369;55,000.00</option>
+
 									</select><span class="input-group-addon add-on"><span  class="fa fa-arrow-down"></span>
 
 								</div>
@@ -1076,13 +1078,17 @@ $(document).ready(function(){
 
 								<select class="select form-control" id="bloodtype" name="btype">
 
-									<option value="O+">O+</option><option value="BA">B+&#45;</option>
+									<option value="A+">A+</option>
+									<option value="Am">A&#45;</option>
 
-									<option value="Om">O&#45;</option><option value="Bm">B&#45;</option>
+									<option value="BA">B+</option>
+									<option value="Bm">B&#45;</option>
 
-									<option value="A+">A+</option><option value="AB+">AB+</option>
+									<option value="AB+">AB+</option>
+									<option value="ABm"> AB&#45;</option>
 
-									<option value="Am">A&#45;</option><option value="ABm"> AB&#45;</option>
+									<option value="O+">O+</option>
+									<option value="Om">O&#45;</option>
 
 								</select>
 

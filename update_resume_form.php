@@ -1529,6 +1529,8 @@ error_reporting(0);
 
 										<option value="51,000.00 - 55,000.00" <?php if($salary == '51,000.00 - 55,000.00')echo'selected'?>>&#8369;51,000.00 - &#8369;55,000.00</option>
 
+										<option value="More than 55,000.00" <?php if($salary == 'More than 55,000.00 55,000.00')echo'selected'?>>More than 55,000.00 &#8369;55,000.00</option>
+
 									</select><span class="input-group-addon add-on"><span class="fa fa-arrow-down"></span>
 
 								</div>
@@ -2035,7 +2037,7 @@ error_reporting(0);
 
 									<option <?php if($blood=="O+")echo 'selected';?> value="O+">O+</option>
 
-									<option <?php if($blood=="BA")echo 'selected';?> value="BA">B+&#45;</option>
+									<<option <?php if($blood=="BA")echo 'selected';?> value="BA">B+</option>
 
 									<option <?php if($blood=="Om")echo 'selected';?> value="Om">O&#45;</option>
 

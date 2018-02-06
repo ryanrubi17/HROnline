@@ -224,7 +224,7 @@ $(document).ready(function(){
 
 		<div class="modal-body">
             <hr>
-			<center><h6 id="gago5">Choose Candidate Type:</h6></center>
+			<center><h6 id="Candidatetype">Choose Candidate Type:</h6></center>
 
 			<center>
 
@@ -234,8 +234,8 @@ $(document).ready(function(){
 
 				<button type="button" onclick="show()" id="btn_intern" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default interns"><p style="margin-bottom:0px;" id="intern_ship"><i class="fa fa-id-badge" aria-hidden="true"></i> &nbsp; Intern</p></button>
              
-				<h4 id="gago2">Authorization Letter</h4><br>
-				<p id="gago">I have read the Privacy Policy and hereby authorize and give my consent for Anderson Group BPO, Inc. to collect, record, 
+				<h4 id="Authorizationletter">Authorization Letter</h4><br>
+				<p id="letter">I have read the Privacy Policy and hereby authorize and give my consent for Anderson Group BPO, Inc. to collect, record, 
 				   organize,update or modify, retrieve, consult, use, consolidate, block, erase or destruct my personal data as part of my information.
 				   I hereby affirm my right to be informed, object to processing, access and rectify, suspend or withdraw my personal data,
 				   and be indemnified in case of damages pursuant to the provisions of the Republic Act No. 10173 of the Philippines, 
@@ -245,12 +245,12 @@ $(document).ready(function(){
 				<button type="button" class="btn btn-primary pull-center" data-dismiss="modal" id="IUnderstand">I Understand</button>
 				  
 				 <style>
-				 #gago2
+				 #Authorizationletter
 				 {
 					 display: none;
 					 color: rgb(47, 84, 150);
 				 }
-				 #gago
+				 #letter
 				 {
 					 display: none;
 				 }
@@ -273,11 +273,11 @@ $(document).ready(function(){
 				 <script type="text/javascript">
 				 
 				 function show(){
-					 document.getElementById("gago").style.display ="block"; 
-					 document.getElementById("gago2").style.display ="block";
+					 document.getElementById("letter").style.display ="block"; 
+					 document.getElementById("Authorizationletter").style.display ="block";
 					 document.getElementById("IUnderstand").style.display ="block";
-					 document.getElementById("gago3").style.display ="none";
-					 document.getElementById("gago4").style.display ="none";
+					 document.getElementById("OR").style.display ="none";
+					 document.getElementById("Reference").style.display ="none";
 					 document.getElementById("ref_code").style.display ="none";
 					 document.getElementById("okay_button").style.display ="none";
 				 }
@@ -287,8 +287,8 @@ $(document).ready(function(){
 					document.getElementById("btn_experienced").style.display ="none";
 					document.getElementById("btn_freshgrad").style.display ="none";
 					document.getElementById("btn_intern").style.display ="none";
-					document.getElementById("gago5").style.display ="none";
-					document.getElementById("gago3").style.display ="none";
+					document.getElementById("Candidatetype").style.display ="none";
+					document.getElementById("OR").style.display ="none";
 					document.getElementById("okay_button").style.display ="block";
 					
 
@@ -297,7 +297,7 @@ $(document).ready(function(){
 				 
 				 </script>
                 
-				<div class="strike" style="margin-bottom:3%;" id="gago3">
+				<div class="strike" style="margin-bottom:3%;" id="OR">
 
 					<span style="font-size:17px;"><b>OR</b></span>
 
@@ -309,7 +309,7 @@ $(document).ready(function(){
 
 			
 
-			<center><h6 id="gago4" title="Enter Your 10 digit Code for unfinished Application Form.">Use Reference Code:</h6></center>
+			<center><h6 id="Reference" title="Enter Your 10 digit Code for unfinished Application Form.">Use Reference Code:</h6></center>
 
 			<center>
 

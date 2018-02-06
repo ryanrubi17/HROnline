@@ -821,15 +821,27 @@ class PDF extends FPDF{
 			$pdf->Cell(35, 5, "Comments:",0,0);
 			$pdf->SetFont('Arial','',10);
 			$pdf->MultiCell(150, 5, ($row['Comment']),0,0);
-			$pdf->Cell(59, 5, '',0,1);			
+			$pdf->Cell(59, 5, '',0,1);	
+			
+			
+			
+			
+			
+            $pdf->SetTextColor(47, 84, 150);	
+            $pdf->SetFont('Arial','B',15);
+            $pdf->Cell(35, 25, "                                                Authorization Letter",0,1);
+			$pdf->SetTextColor(0,0,0);
+			$pdf->SetFont('Arial','',10);	
+            $pdf->Cell(35, 5, "I have read the Privacy Policy and hereby authorize and give my consent for Anderson Group BPO, Inc. to collect, record,",0,1);
+			$pdf->Cell(35, 10, "organize,update or modify, retrieve, consult, use, consolidate, block, erase or destruct my personal data as part of my" ,0,1);
+			$pdf->Cell(35, 5, "information. I hereby affirm my right to be informed, object to processing, access and rectify, suspend or withdraw my",0,1);
+			$pdf->Cell(35, 10, "personal data, and be indemnified in case of damages pursuant to the provisions of the Republic Act No. 10173 of the",0,1);
+			$pdf->Cell(35, 5, "Philippines,  Data Privacy Act of 2012 and Regulation (EU) 2016/679, General Data Protection Regulation, whichever is",0,1);
+			$pdf->Cell(35, 10, "applicable, and its corresponding implementing rules and regulations.",0,1);
+				    
 		
 		$pdf->Output();
-		
-		
-		
-		
-		
-		
+
 	}
 
 

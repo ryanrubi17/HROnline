@@ -1797,11 +1797,11 @@ error_reporting(0);
 
 											<option value="Linked In">Linked In</option>
 
-											<option value="Website">AndersonGroup Site</option>
+											<option value="AndersonGroup Site">AndersonGroup Site</option>
 
 											<option value="Facebook">Facebook</option>
 
-											<option value="From a Friend">Referral</option>
+											<option value="Referral">Referral</option>
 
 											<option value="Job street">Jobstreet</option>
 

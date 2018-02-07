@@ -30,7 +30,7 @@
 		<div class="row" style="z-index:1; margin-top:-20px;" id="topDiv">
 			<nav  class="navbar navbar-inverse" >
 				<div class="container-fluid" id= 'navHead' style = 'background-color:#dfe5ec;'>
-					<a class="navbar-brand" style="cursor:pointer; z-index:1;" href="#"><h4 style="font-family:'Trebuchet MS', Helvetica, sans-serif; cursor:pointer; z-index:1; color:#00008B;" onclick="openNav()"><i class="fa fa-bars"></i> Menu</h4></a>		  
+					<a class="navbar-brand" style="cursor:pointer; z-index:1;" href="#"><h4 style="font-family:'Trebuchet MS', Helvetica, sans-serif; cursor:pointer; z-index:1; color:#00008B;" onclick="openNav()"><i class="fa fa-bars"></i> Menu</h4></a>
 					<span style = "position:absolute;left:0;right:0;text-align:center;"><h3 style="color:#00008B;">Applicants List</h3></span>
 				</div>
 			</nav>

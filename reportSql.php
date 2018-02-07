@@ -312,9 +312,9 @@
 
 				sum(Case when Application_source ='Facebook' then 1 else 0 end) as 'Facebook',
 
-				sum(Case when Application_source ='From a Friend' then 1 else 0 end) as 'From a Friend',
+				sum(Case when Application_source ='From a Friend' or Application_source ='Referral' then 1 else 0 end) as 'From a Friend',
 
-				sum(Case when Application_source ='Website' then 1 else 0 end) as 'Website',
+				sum(Case when Application_source ='Website' or Application_source ='AndersonGroup Site' then 1 else 0 end) as 'Website',
 
 				sum(Case when Application_source ='Others' or Application_source ='' then 1 else 0 end) as 'Others',
 				

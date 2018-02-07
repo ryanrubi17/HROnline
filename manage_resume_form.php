@@ -66,6 +66,7 @@
 <html>
 <head>
 	<title>Application Form</title>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>	
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">

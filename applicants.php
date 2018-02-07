@@ -145,7 +145,15 @@
 						   $("#initial-table").hide();
 		                   $("#result").html(html).show();
 		               }
-		           });
+		            });
+				    $.ajax({
+		               type: "POST",
+		               url: "http://localhost/HROnline/jsonsearch.php",
+		               data: {
+		                   jsonsearch: name
+		               },
+					   dataType: "json"
+		            });
 		       }
 		   });
 		});

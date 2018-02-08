@@ -235,7 +235,7 @@ $(document).ready(function(){
 				<button type="button" onclick="show()" id="btn_intern" style="padding-bottom:2%;margin-bottom:5%;" class=" btn btn-default interns"><p style="margin-bottom:0px;" id="intern_ship"><i class="fa fa-id-badge" aria-hidden="true"></i> &nbsp; Intern</p></button>
              
 				<h4 id="Authorizationletter">Authorization Letter</h4><br>
-				<p id="letter">I have read the Privacy Policy and hereby authorize and give my consent for Anderson Group BPO, Inc. to collect, record, 
+				<p id="letter">I have read the <a href="http://andersongroup.ph/privacy-policy/"><u>Privacy Policy</u></a> and hereby authorize and give my consent for Anderson Group BPO, Inc. to collect, record, 
 				   organize,update or modify, retrieve, consult, use, consolidate, block, erase or destruct my personal data as part of my information.
 				   I hereby affirm my right to be informed, object to processing, access and rectify, suspend or withdraw my personal data,
 				   and be indemnified in case of damages pursuant to the provisions of the Republic Act No. 10173 of the Philippines, 
